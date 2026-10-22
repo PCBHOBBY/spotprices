@@ -50,6 +50,29 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 .tile em{display:block;font-style:normal;font-size:5.4vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;line-height:1.05}
 footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh}
 footer a{color:#8fb3c7;text-decoration:none}
+
+@media (orientation:portrait),(max-width:700px){
+html,body{height:auto;overflow:auto}
+body{padding:16px 14px 18px;min-height:100vh}
+header{flex-direction:column;align-items:flex-start!important;gap:10px;padding-bottom:14px}
+.bw{gap:12px}.logo{height:72px}
+.brand small{font-size:11px;letter-spacing:3px;margin-bottom:2px}
+.brand h1{font-size:26px}.live{font-size:10px;padding:3px 8px;margin-left:6px;letter-spacing:2px}.live i{width:7px;height:7px}
+.time{text-align:left;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}.time .t{font-size:22px}.time .d{font-size:11px}
+main{grid-template-columns:1fr;gap:16px;padding:16px 0}
+.card{padding:18px 14px;border-radius:16px}.card::before{border-radius:16px;padding:3px}
+.label{gap:10px;margin-bottom:6px}.sym{width:40px;height:40px;font-size:16px}
+.label h2{font-size:30px;letter-spacing:5px}.label span{font-size:11px;letter-spacing:1px}
+.price{font-size:52px;margin:6px 0 6px}
+.upd{font-size:12px;margin-bottom:10px}
+.mini{gap:12px}.mini img{height:90px!important}.mini p{font-size:11px;max-width:120px}.mini .chart{padding:5px;border-radius:8px}
+.melt{padding:14px 12px;border-radius:16px;margin-bottom:14px}
+.melt h3{font-size:13px;letter-spacing:2px;margin-bottom:10px}.melt h3 span{display:block;margin:4px 0 0;font-size:11px}
+.tiles{grid-template-columns:1fr 1fr;gap:10px}
+.tile{padding:10px 8px;border-radius:10px}.tile:last-child{grid-column:1/-1}
+.tile b{font-size:15px}.tile i{font-size:11px;margin:2px 0 4px}.tile em{font-size:28px}
+footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-spacing:.5px;padding-top:10px}
+}
 </style></head><body>
 <header>
  <div class="bw"><img class="logo" src="logo.png" alt="PCB Hobby">
