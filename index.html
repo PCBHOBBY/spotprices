@@ -36,6 +36,12 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 .label span{font-size:2vh;color:#8fb3c7;letter-spacing:.3vh;display:block}
 .chart{background:#fff;border-radius:1.6vh;padding:1.4vh;box-shadow:0 1vh 3vh rgba(0,0,0,.45)}
 .chart img{display:block;height:46vh;width:auto;aspect-ratio:172/114;image-rendering:pixelated}
+.price{font-size:15vh;font-weight:800;line-height:1;letter-spacing:-.2vh;font-variant-numeric:tabular-nums;margin:.5vh 0 1.2vh}
+.gold .price{color:#fcd05a;text-shadow:0 0 4vh rgba(252,208,90,.25)}.silver .price{color:#f4f7fa;text-shadow:0 0 4vh rgba(255,255,255,.18)}
+.price small{font-size:.32em;font-weight:500;color:#8fb3c7;margin-left:.6vw;letter-spacing:0}
+.upd{font-size:2vh;color:#8fb3c7;letter-spacing:.2vh;margin-bottom:2.4vh}.upd.stale{color:#ff9f6b}
+.mini{display:flex;align-items:center;gap:1.4vw}.mini .chart{padding:.8vh;border-radius:1vh}.mini img{height:17vh!important}
+.mini p{font-size:1.8vh;color:#6d8ea3;max-width:12vw;line-height:1.4}
 footer{display:flex;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh}
 footer a{color:#8fb3c7;text-decoration:none}
 </style></head><body>
@@ -46,14 +52,22 @@ footer a{color:#8fb3c7;text-decoration:none}
 </header>
 <main>
  <section class="card gold"><div class="label"><div class="sym">Au</div><div><h2>GOLD</h2><span>SPOT · USD / OZ · 24 HR</span></div></div>
-  <div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" alt="Kitco 24 hour spot gold"></a></div></section>
+  <div class="price" id="gold">—</div><div class="upd" id="gold-u">Loading…</div><div class="mini"><div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" alt="Kitco 24 hour gold chart"></a></div><p>24-hr chart &amp; change<br>courtesy of Kitco</p></div></section>
  <section class="card silver"><div class="label"><div class="sym">Ag</div><div><h2>SILVER</h2><span>SPOT · USD / OZ · 24 HR</span></div></div>
-  <div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" alt="Kitco 24 hour spot silver"></a></div></section>
+  <div class="price" id="silver">—</div><div class="upd" id="silver-u">Loading…</div><div class="mini"><div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" alt="Kitco 24 hour silver chart"></a></div><p>24-hr chart &amp; change<br>courtesy of Kitco</p></div></section>
 </main>
-<footer><span>Spot prices (bid) · updated every minute</span><a href="https://www.kitco.com/connecting.html">Live charts courtesy of www.kitco.com</a></footer>
+<footer><span>Spot price per troy oz (USD) from gold-api.com · refreshed every 60 seconds</span><a href="https://www.kitco.com/connecting.html">24-hour charts courtesy of www.kitco.com</a></footer>
 <script>
 function r(){document.querySelectorAll('img[data-src]').forEach(function(i){var n=new Image();n.onload=function(){i.src=n.src};n.src=i.dataset.src+'?t='+Date.now();});}
 function c(){var x=new Date();document.getElementById('t').textContent=x.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
 document.getElementById('d').textContent=x.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
+var last={};
+function fmt(v){return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function load(m,s){fetch('https://api.gold-api.com/price/'+s,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+ if(typeof d.price!=='number')throw 0;last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/oz</small>';
+ var u=document.getElementById(m+'-u');u.className='upd';u.textContent='Updated '+new Date(d.updatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' ET';
+}).catch(function(){var u=document.getElementById(m+'-u');if(last[m]){u.className='upd stale';u.textContent='Reconnecting… showing last price from '+new Date(last[m]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}else u.textContent='Price unavailable – retrying';});}
+function prices(){load('gold','XAU');load('silver','XAG');}
+prices();setInterval(prices,60000);
 r();c();setInterval(r,60000);setInterval(c,1000);
 </script></body></html>
