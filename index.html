@@ -51,6 +51,13 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh}
 footer a{color:#8fb3c7;text-decoration:none}
 
+
+.melt{padding:1.1vh 2vw 1.3vh;margin-bottom:1.2vh}.melt h3{font-size:2vh;margin-bottom:.8vh}
+.tile{padding:.8vh 1vw}.tile b{font-size:2.2vh}.tile i{font-size:1.45vh;margin:.2vh 0 .3vh}.tile em{font-size:4.4vh}
+.gm{background:linear-gradient(180deg,rgba(252,208,90,.10),rgba(138,100,23,.08));border-color:rgba(252,208,90,.5)}.gm h3{color:#fcd05a}.gm .tile{border-top-color:#d4af37}
+.price{font-size:14vh;margin:.6vh 0 1vh}.card{padding:1.2vh 2vw}.label{margin-bottom:.4vh}.sym{width:5.6vh;height:5.6vh;font-size:2.4vh}
+.label h2{font-size:5vh;letter-spacing:1vh}.label span{font-size:1.6vh}.upd{font-size:1.7vh;margin-bottom:.7vh}.mini img{height:9.5vh!important}.mini .chart{padding:.5vh}
+main{padding:1.4vh 0 1.2vh}
 @media (orientation:portrait),(max-width:700px){
 html,body{height:auto;overflow:auto}
 body{padding:16px 14px 18px;min-height:100vh}
@@ -63,13 +70,13 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 .card{padding:18px 14px;border-radius:16px}.card::before{border-radius:16px;padding:3px}
 .label{gap:10px;margin-bottom:6px}.sym{width:40px;height:40px;font-size:16px}
 .label h2{font-size:30px;letter-spacing:5px}.label span{font-size:11px;letter-spacing:1px}
-.price{font-size:52px;margin:6px 0 6px}
+.price{font-size:60px;margin:6px 0 6px}
 .upd{font-size:12px;margin-bottom:10px}
 .mini{gap:12px}.mini img{height:90px!important}.mini p{font-size:11px;max-width:120px}.mini .chart{padding:5px;border-radius:8px}
 .melt{padding:14px 12px;border-radius:16px;margin-bottom:14px}
 .melt h3{font-size:13px;letter-spacing:2px;margin-bottom:10px}.melt h3 span{display:block;margin:4px 0 0;font-size:11px}
 .tiles{grid-template-columns:1fr 1fr;gap:10px}
-.tile{padding:10px 8px;border-radius:10px}.tile:last-child{grid-column:1/-1}
+.melt{padding:14px 12px}.melt h3{font-size:13px}.tile{padding:10px 8px;border-radius:10px}.tile:last-child{grid-column:1/-1}
 .tile b{font-size:15px}.tile i{font-size:11px;margin:2px 0 4px}.tile em{font-size:28px}
 footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-spacing:.5px;padding-top:10px}
 }
@@ -81,23 +88,23 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
 </header>
 <main>
  <section class="card gold"><div class="label"><div class="sym">Au</div><div><h2>GOLD</h2><span>SPOT · USD / OZ · 24 HR</span></div></div>
-  <div class="price" id="gold">—</div><div class="upd" id="gold-u">Loading…</div><div class="mini"><div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" alt="Kitco 24 hour gold chart"></a></div><p>24-hr chart &amp; change<br>courtesy of Kitco</p></div></section>
+  <div class="price" id="gold">—</div><div class="upd" id="gold-u">Loading…</div></section>
  <section class="card silver"><div class="label"><div class="sym">Ag</div><div><h2>SILVER</h2><span>SPOT · USD / OZ · 24 HR</span></div></div>
-  <div class="price" id="silver">—</div><div class="upd" id="silver-u">Loading…</div><div class="mini"><div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" alt="Kitco 24 hour silver chart"></a></div><p>24-hr chart &amp; change<br>courtesy of Kitco</p></div></section>
+  <div class="price" id="silver">—</div><div class="upd" id="silver-u">Loading…</div></section>
 </main>
 <section class="melt"><h3>Silver Coin Melt Values<span>silver content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Dime</b><i>90% silver · 0.07234 oz</i><em data-asw="0.07234">—</em></div><div class="tile"><b>Quarter</b><i>90% silver · 0.18084 oz</i><em data-asw="0.18084">—</em></div><div class="tile"><b>Half Dollar</b><i>90% silver · 0.36169 oz</i><em data-asw="0.36169">—</em></div><div class="tile"><b>Morgan / Peace $1</b><i>90% silver · 0.77344 oz</i><em data-asw="0.77344">—</em></div><div class="tile"><b>40% Half Dollar</b><i>Kennedy 1965–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div></div></section>
-<footer><span>Spot from gold-api.com · melt values calculated from silver spot (metal only) · updates every 60 s</span><a href="https://www.kitco.com/connecting.html">Charts courtesy of www.kitco.com</a></footer>
+<section class="melt gm"><h3>Pre-1933 Gold Coin Melt Values<span>gold content × live gold spot</span></h3><div class="tiles"><div class="tile"><b>$20 Double Eagle</b><i>90% gold · 0.9675 oz</i><em data-agw="0.9675">—</em></div><div class="tile"><b>$10 Eagle</b><i>90% gold · 0.48375 oz</i><em data-agw="0.48375">—</em></div><div class="tile"><b>$5 Half Eagle</b><i>90% gold · 0.24187 oz</i><em data-agw="0.24187">—</em></div><div class="tile"><b>$2.50 Quarter Eagle</b><i>90% gold · 0.12094 oz</i><em data-agw="0.12094">—</em></div><div class="tile"><b>$1 Gold Dollar</b><i>90% gold · 0.04837 oz</i><em data-agw="0.04837">—</em></div></div></section>
+<footer><span>Spot from gold-api.com · melt values = metal content × spot (metal only) · updates every 60 s</span></footer>
 <script>
-function r(){document.querySelectorAll('img[data-src]').forEach(function(i){var n=new Image();n.onload=function(){i.src=n.src};n.src=i.dataset.src+'?t='+Date.now();});}
 function c(){var x=new Date();document.getElementById('t').textContent=x.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
 document.getElementById('d').textContent=x.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
 var last={};
 function fmt(v){return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function load(m,s){fetch('https://api.gold-api.com/price/'+s,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
- if(typeof d.price!=='number')throw 0;if(m==='silver')document.querySelectorAll('[data-asw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/oz</small>';
+ if(typeof d.price!=='number')throw 0;document.querySelectorAll(m==='silver'?'[data-asw]':'[data-agw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw||e.dataset.agw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/oz</small>';
  var u=document.getElementById(m+'-u');u.className='upd';u.textContent='Updated '+new Date(d.updatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' ET';
 }).catch(function(){var u=document.getElementById(m+'-u');if(last[m]){u.className='upd stale';u.textContent='Reconnecting… showing last price from '+new Date(last[m]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}else u.textContent='Price unavailable – retrying';});}
 function prices(){load('gold','XAU');load('silver','XAG');}
 prices();setInterval(prices,60000);
-r();c();setInterval(r,60000);setInterval(c,1000);
+c();setInterval(c,1000);
 </script></body></html>
