@@ -1,33 +1,59 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="300">
-<title>Live Gold &amp; Silver – Kitco</title>
+<meta http-equiv="refresh" content="900">
+<title>PCB Hobby · Live Precious Metals</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100vw;height:100vh;overflow:hidden;background:#0b0d12;color:#eee;font-family:Arial,Helvetica,sans-serif}
-header{height:12vh;display:flex;align-items:center;justify-content:space-between;padding:0 3vw;border-bottom:2px solid #222}
-h1{font-size:5vh;letter-spacing:.3vh}h1 span{color:#f5c542}
-#clock{font-size:4vh;color:#aaa}
-main{height:80vh;display:grid;grid-template-columns:1fr 1fr 0.55fr;gap:2vw;padding:2.5vh 3vw}
-.panel{border-radius:2vh;padding:2vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#151922}
-.gold{border:4px solid #f5c542}.silver{border:4px solid #c0c6d0}.quote{border:4px solid #444}
-.panel h2{font-size:6vh;margin-bottom:2vh;letter-spacing:.5vh}
-.gold h2{color:#f5c542}.silver h2{color:#d9dee6}
-.panel a{display:block;width:100%;flex:1;min-height:0}
-.panel img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;background:#fff;border-radius:1vh}
-.quote img{background:#000}
-footer{height:8vh;display:flex;align-items:center;justify-content:center;font-size:2.4vh;color:#888}
+html,body{width:100%;height:100%;overflow:hidden}
+body{font-family:"Helvetica Neue",Arial,sans-serif;color:#f4f7fa;
+ background:radial-gradient(ellipse at 12% -10%,rgba(46,192,220,.28),transparent 50%),radial-gradient(ellipse at 95% 110%,rgba(252,208,90,.14),transparent 50%),linear-gradient(165deg,#0a2236 0%,#071827 55%,#04101b 100%);
+ display:flex;flex-direction:column;padding:2.6vh 3.4vw 2.2vh}
+header{display:flex;align-items:center;justify-content:space-between;padding-bottom:2vh;position:relative}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px;background:linear-gradient(90deg,#2ec0dc,#14678a 45%,#fcd05a)}
+.bw{display:flex;align-items:center;gap:2vw}
+.logo{height:16vh;display:block;filter:drop-shadow(0 .8vh 1.6vh rgba(0,0,0,.55))}
+.brand small{display:block;font-size:2.2vh;letter-spacing:.8vh;color:#2ec0dc;text-transform:uppercase;margin-bottom:.6vh;font-weight:600}
+.brand h1{font-size:7vh;font-weight:300}.brand h1 b{font-weight:800;color:#fcd05a}
+.live{display:inline-flex;align-items:center;gap:1vh;font-size:2vh;letter-spacing:.4vh;color:#ff6b6b;margin-left:1.6vw;vertical-align:middle;font-weight:700;border:1px solid rgba(255,107,107,.5);border-radius:3vh;padding:.6vh 1.4vh}
+.live i{width:1.3vh;height:1.3vh;border-radius:50%;background:#ff4d4d;box-shadow:0 0 1.2vh #f44;animation:p 1.6s infinite}
+@keyframes p{50%{opacity:.25}}
+.time{text-align:right}.time .t{font-size:7vh;font-weight:200;font-variant-numeric:tabular-nums}.time .d{font-size:2.3vh;color:#8fb3c7;letter-spacing:.3vh;text-transform:uppercase}
+main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;padding:3vh 0 2.2vh}
+.card{position:relative;border-radius:2.4vh;padding:2.6vh 2vw;display:flex;flex-direction:column;align-items:center;justify-content:center;
+ background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));box-shadow:0 2vh 5vh rgba(0,0,0,.5)}
+.card::before{content:"";position:absolute;inset:0;border-radius:2.4vh;padding:4px;
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.gold::before{background:linear-gradient(135deg,#f9e29c,#b8862b 40%,#fff1b8 60%,#8a6417)}
+.silver::before{background:linear-gradient(135deg,#fff,#8d939c 40%,#eef1f5 60%,#5e646d)}
+.label{display:flex;align-items:center;gap:1.2vw;margin-bottom:2.4vh}
+.sym{width:7.5vh;height:7.5vh;border-radius:50%;display:grid;place-items:center;font-size:3vh;font-weight:800;color:#1a1a1a}
+.gold .sym{background:radial-gradient(circle at 30% 30%,#fff3c4,#d4af37 55%,#8a6417)}
+.silver .sym{background:radial-gradient(circle at 30% 30%,#fff,#c0c6d0 55%,#6b717a)}
+.label h2{font-size:6.4vh;letter-spacing:1.2vh;font-weight:700;-webkit-background-clip:text;background-clip:text;color:transparent}
+.gold h2{background-image:linear-gradient(180deg,#fff1b8,#d4af37 60%,#a07a22)}
+.silver h2{background-image:linear-gradient(180deg,#fff,#c9ced6 60%,#8d939c)}
+.label span{font-size:2vh;color:#8fb3c7;letter-spacing:.3vh;display:block}
+.chart{background:#fff;border-radius:1.6vh;padding:1.4vh;box-shadow:0 1vh 3vh rgba(0,0,0,.45)}
+.chart img{display:block;height:46vh;width:auto;aspect-ratio:172/114;image-rendering:pixelated}
+footer{display:flex;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh}
+footer a{color:#8fb3c7;text-decoration:none}
 </style></head><body>
-<header><h1>LIVE <span>GOLD</span> &amp; SILVER SPOT</h1><div id="clock"></div></header>
+<header>
+ <div class="bw"><img class="logo" src="logo.png" alt="PCB Hobby">
+  <div class="brand"><small>Panama City Beach</small><h1>Live <b>Precious Metals</b><span class="live"><i></i>LIVE</span></h1></div></div>
+ <div class="time"><div class="t" id="t"></div><div class="d" id="d"></div></div>
+</header>
 <main>
- <div class="panel gold"><h2>GOLD</h2><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" alt="Kitco 24 hour gold chart"></a></div>
- <div class="panel silver"><h2>SILVER</h2><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" alt="Kitco 24 hour silver chart"></a></div>
- <div class="panel quote"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/images/quotes_special.gif" alt="Kitco live quotes"></a></div>
+ <section class="card gold"><div class="label"><div class="sym">Au</div><div><h2>GOLD</h2><span>SPOT · USD / OZ · 24 HR</span></div></div>
+  <div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" alt="Kitco 24 hour spot gold"></a></div></section>
+ <section class="card silver"><div class="label"><div class="sym">Ag</div><div><h2>SILVER</h2><span>SPOT · USD / OZ · 24 HR</span></div></div>
+  <div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" alt="Kitco 24 hour spot silver"></a></div></section>
 </main>
-<footer>Prices in USD per oz &middot; Live charts courtesy of www.kitco.com &middot; updated every minute</footer>
+<footer><span>Spot prices (bid) · updated every minute</span><a href="https://www.kitco.com/connecting.html">Live charts courtesy of www.kitco.com</a></footer>
 <script>
-function refresh(){document.querySelectorAll('img[data-src]').forEach(function(i){i.src=i.dataset.src+'?t='+Date.now();});}
-function tick(){document.getElementById('clock').textContent=new Date().toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}
-refresh();tick();setInterval(refresh,60000);setInterval(tick,1000);
+function r(){document.querySelectorAll('img[data-src]').forEach(function(i){var n=new Image();n.onload=function(){i.src=n.src};n.src=i.dataset.src+'?t='+Date.now();});}
+function c(){var x=new Date();document.getElementById('t').textContent=x.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+document.getElementById('d').textContent=x.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
+r();c();setInterval(r,60000);setInterval(c,1000);
 </script></body></html>
