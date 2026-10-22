@@ -12,21 +12,21 @@ body{font-family:"Helvetica Neue",Arial,sans-serif;color:#f4f7fa;
 header{display:flex;align-items:center;justify-content:space-between;padding-bottom:2vh;position:relative}
 header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;border-radius:3px;background:linear-gradient(90deg,#2ec0dc,#14678a 45%,#fcd05a)}
 .bw{display:flex;align-items:center;gap:2vw}
-.logo{height:16vh;display:block;filter:drop-shadow(0 .8vh 1.6vh rgba(0,0,0,.55))}
+.logo{height:13vh;display:block;filter:drop-shadow(0 .8vh 1.6vh rgba(0,0,0,.55))}
 .brand small{display:block;font-size:2.2vh;letter-spacing:.8vh;color:#2ec0dc;text-transform:uppercase;margin-bottom:.6vh;font-weight:600}
-.brand h1{font-size:7vh;font-weight:300}.brand h1 b{font-weight:800;color:#fcd05a}
+.brand h1{font-size:6vh;font-weight:300}.brand h1 b{font-weight:800;color:#fcd05a}
 .live{display:inline-flex;align-items:center;gap:1vh;font-size:2vh;letter-spacing:.4vh;color:#ff6b6b;margin-left:1.6vw;vertical-align:middle;font-weight:700;border:1px solid rgba(255,107,107,.5);border-radius:3vh;padding:.6vh 1.4vh}
 .live i{width:1.3vh;height:1.3vh;border-radius:50%;background:#ff4d4d;box-shadow:0 0 1.2vh #f44;animation:p 1.6s infinite}
 @keyframes p{50%{opacity:.25}}
-.time{text-align:right}.time .t{font-size:7vh;font-weight:200;font-variant-numeric:tabular-nums}.time .d{font-size:2.3vh;color:#8fb3c7;letter-spacing:.3vh;text-transform:uppercase}
-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;padding:3vh 0 2.2vh}
-.card{position:relative;border-radius:2.4vh;padding:2.6vh 2vw;display:flex;flex-direction:column;align-items:center;justify-content:center;
+.time{text-align:right}.time .t{font-size:6vh;font-weight:200;font-variant-numeric:tabular-nums}.time .d{font-size:2.3vh;color:#8fb3c7;letter-spacing:.3vh;text-transform:uppercase}
+main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;padding:2vh 0 1.8vh}
+.card{position:relative;border-radius:2.4vh;padding:2vh 2vw;display:flex;flex-direction:column;align-items:center;justify-content:center;
  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));box-shadow:0 2vh 5vh rgba(0,0,0,.5)}
 .card::before{content:"";position:absolute;inset:0;border-radius:2.4vh;padding:4px;
  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
 .gold::before{background:linear-gradient(135deg,#f9e29c,#b8862b 40%,#fff1b8 60%,#8a6417)}
 .silver::before{background:linear-gradient(135deg,#fff,#8d939c 40%,#eef1f5 60%,#5e646d)}
-.label{display:flex;align-items:center;gap:1.2vw;margin-bottom:2.4vh}
+.label{display:flex;align-items:center;gap:1.2vw;margin-bottom:1.2vh}
 .sym{width:7.5vh;height:7.5vh;border-radius:50%;display:grid;place-items:center;font-size:3vh;font-weight:800;color:#1a1a1a}
 .gold .sym{background:radial-gradient(circle at 30% 30%,#fff3c4,#d4af37 55%,#8a6417)}
 .silver .sym{background:radial-gradient(circle at 30% 30%,#fff,#c0c6d0 55%,#6b717a)}
@@ -36,13 +36,19 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 .label span{font-size:2vh;color:#8fb3c7;letter-spacing:.3vh;display:block}
 .chart{background:#fff;border-radius:1.6vh;padding:1.4vh;box-shadow:0 1vh 3vh rgba(0,0,0,.45)}
 .chart img{display:block;height:46vh;width:auto;aspect-ratio:172/114;image-rendering:pixelated}
-.price{font-size:15vh;font-weight:800;line-height:1;letter-spacing:-.2vh;font-variant-numeric:tabular-nums;margin:.5vh 0 1.2vh}
+.price{font-size:12vh;font-weight:800;line-height:1;letter-spacing:-.2vh;font-variant-numeric:tabular-nums;margin:.5vh 0 1.2vh}
 .gold .price{color:#fcd05a;text-shadow:0 0 4vh rgba(252,208,90,.25)}.silver .price{color:#f4f7fa;text-shadow:0 0 4vh rgba(255,255,255,.18)}
 .price small{font-size:.32em;font-weight:500;color:#8fb3c7;margin-left:.6vw;letter-spacing:0}
-.upd{font-size:2vh;color:#8fb3c7;letter-spacing:.2vh;margin-bottom:2.4vh}.upd.stale{color:#ff9f6b}
-.mini{display:flex;align-items:center;gap:1.4vw}.mini .chart{padding:.8vh;border-radius:1vh}.mini img{height:17vh!important}
+.upd{font-size:2vh;color:#8fb3c7;letter-spacing:.2vh;margin-bottom:1.4vh}.upd.stale{color:#ff9f6b}
+.mini{display:flex;align-items:center;gap:1.4vw}.mini .chart{padding:.8vh;border-radius:1vh}.mini img{height:12vh!important}
 .mini p{font-size:1.8vh;color:#6d8ea3;max-width:12vw;line-height:1.4}
-footer{display:flex;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh}
+.melt{border-radius:2.2vh;padding:1.6vh 2vw 1.8vh;margin-bottom:1.8vh;background:linear-gradient(180deg,rgba(46,192,220,.10),rgba(20,103,138,.08));border:2px solid rgba(46,192,220,.45);box-shadow:0 1.5vh 4vh rgba(0,0,0,.45)}
+.melt h3{font-size:2.3vh;letter-spacing:.6vh;color:#2ec0dc;font-weight:700;margin-bottom:1.2vh;text-transform:uppercase}.melt h3 span{color:#8fb3c7;font-weight:400;letter-spacing:.2vh;text-transform:none;margin-left:1vw}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4vw}
+.tile{background:rgba(4,16,27,.55);border-radius:1.4vh;padding:1.2vh 1vw;text-align:center;border-top:3px solid #fcd05a}
+.tile b{display:block;font-size:2.5vh;color:#f4f7fa;font-weight:600}.tile i{display:block;font-style:normal;font-size:1.6vh;color:#6d8ea3;margin:.3vh 0 .6vh}
+.tile em{display:block;font-style:normal;font-size:5.4vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;line-height:1.05}
+footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh}
 footer a{color:#8fb3c7;text-decoration:none}
 </style></head><body>
 <header>
@@ -56,7 +62,8 @@ footer a{color:#8fb3c7;text-decoration:none}
  <section class="card silver"><div class="label"><div class="sym">Ag</div><div><h2>SILVER</h2><span>SPOT · USD / OZ · 24 HR</span></div></div>
   <div class="price" id="silver">—</div><div class="upd" id="silver-u">Loading…</div><div class="mini"><div class="chart"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" alt="Kitco 24 hour silver chart"></a></div><p>24-hr chart &amp; change<br>courtesy of Kitco</p></div></section>
 </main>
-<footer><span>Spot price per troy oz (USD) from gold-api.com · refreshed every 60 seconds</span><a href="https://www.kitco.com/connecting.html">24-hour charts courtesy of www.kitco.com</a></footer>
+<section class="melt"><h3>Silver Coin Melt Values<span>silver content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Dime</b><i>90% silver · 0.07234 oz</i><em data-asw="0.07234">—</em></div><div class="tile"><b>Quarter</b><i>90% silver · 0.18084 oz</i><em data-asw="0.18084">—</em></div><div class="tile"><b>Half Dollar</b><i>90% silver · 0.36169 oz</i><em data-asw="0.36169">—</em></div><div class="tile"><b>Morgan / Peace $1</b><i>90% silver · 0.77344 oz</i><em data-asw="0.77344">—</em></div><div class="tile"><b>40% Half Dollar</b><i>Kennedy 1965–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div></div></section>
+<footer><span>Spot from gold-api.com · melt values calculated from silver spot (metal only) · updates every 60 s</span><a href="https://www.kitco.com/connecting.html">Charts courtesy of www.kitco.com</a></footer>
 <script>
 function r(){document.querySelectorAll('img[data-src]').forEach(function(i){var n=new Image();n.onload=function(){i.src=n.src};n.src=i.dataset.src+'?t='+Date.now();});}
 function c(){var x=new Date();document.getElementById('t').textContent=x.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
@@ -64,7 +71,7 @@ document.getElementById('d').textContent=x.toLocaleDateString('en-US',{weekday:'
 var last={};
 function fmt(v){return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function load(m,s){fetch('https://api.gold-api.com/price/'+s,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
- if(typeof d.price!=='number')throw 0;last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/oz</small>';
+ if(typeof d.price!=='number')throw 0;if(m==='silver')document.querySelectorAll('[data-asw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/oz</small>';
  var u=document.getElementById(m+'-u');u.className='upd';u.textContent='Updated '+new Date(d.updatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' ET';
 }).catch(function(){var u=document.getElementById(m+'-u');if(last[m]){u.className='upd stale';u.textContent='Reconnecting… showing last price from '+new Date(last[m]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}else u.textContent='Price unavailable – retrying';});}
 function prices(){load('gold','XAU');load('silver','XAG');}
