@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="300">
+<title>Live Gold &amp; Silver – Kitco</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100vw;height:100vh;overflow:hidden;background:#0b0d12;color:#eee;font-family:Arial,Helvetica,sans-serif}
+header{height:12vh;display:flex;align-items:center;justify-content:space-between;padding:0 3vw;border-bottom:2px solid #222}
+h1{font-size:5vh;letter-spacing:.3vh}h1 span{color:#f5c542}
+#clock{font-size:4vh;color:#aaa}
+main{height:80vh;display:grid;grid-template-columns:1fr 1fr 0.55fr;gap:2vw;padding:2.5vh 3vw}
+.panel{border-radius:2vh;padding:2vh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#151922}
+.gold{border:4px solid #f5c542}.silver{border:4px solid #c0c6d0}.quote{border:4px solid #444}
+.panel h2{font-size:6vh;margin-bottom:2vh;letter-spacing:.5vh}
+.gold h2{color:#f5c542}.silver h2{color:#d9dee6}
+.panel a{display:block;width:100%;flex:1;min-height:0}
+.panel img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated;background:#fff;border-radius:1vh}
+.quote img{background:#000}
+footer{height:8vh;display:flex;align-items:center;justify-content:center;font-size:2.4vh;color:#888}
+</style></head><body>
+<header><h1>LIVE <span>GOLD</span> &amp; SILVER SPOT</h1><div id="clock"></div></header>
+<main>
+ <div class="panel gold"><h2>GOLD</h2><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/gold/t24_au_en_usoz_2.gif" alt="Kitco 24 hour gold chart"></a></div>
+ <div class="panel silver"><h2>SILVER</h2><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/charts/metals/silver/t24_ag_en_usoz_2.gif" alt="Kitco 24 hour silver chart"></a></div>
+ <div class="panel quote"><a href="https://www.kitco.com/connecting.html"><img data-src="https://www.kitconet.com/images/quotes_special.gif" alt="Kitco live quotes"></a></div>
+</main>
+<footer>Prices in USD per oz &middot; Live charts courtesy of www.kitco.com &middot; updated every minute</footer>
+<script>
+function refresh(){document.querySelectorAll('img[data-src]').forEach(function(i){i.src=i.dataset.src+'?t='+Date.now();});}
+function tick(){document.getElementById('clock').textContent=new Date().toLocaleString('en-US',{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}
+refresh();tick();setInterval(refresh,60000);setInterval(tick,1000);
+</script></body></html>
