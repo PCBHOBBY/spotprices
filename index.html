@@ -38,29 +38,32 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 .gold .price{color:#fcd05a;text-shadow:0 0 4vh rgba(252,208,90,.25)}.silver .price{color:#f4f7fa;text-shadow:0 0 4vh rgba(255,255,255,.18)}
 .price small{font-size:.32em;font-weight:500;color:#8fb3c7;margin-left:.6vw;letter-spacing:0}
 .upd{font-size:1.7vh;color:#8fb3c7;letter-spacing:.2vh;margin-bottom:.7vh}.upd.stale{color:#ff9f6b}
-.tabs{display:flex;gap:1.2vw;margin:.4vh 0 1.2vh;flex-shrink:0}
-.tab{flex:1;min-height:5.6vh;padding:1.2vh 2vw;border-radius:1.4vh;border:2px solid rgba(46,192,220,.35);background:rgba(4,16,27,.45);color:#8fb3c7;font-size:2.4vh;font-weight:700;letter-spacing:.5vh;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;font-family:inherit}
+.tabs{display:flex;gap:1vw;margin:.4vh 0 1.2vh;flex-shrink:0}
+.tab{flex:1;min-height:5.6vh;padding:1.2vh 1.2vw;border-radius:1.4vh;border:2px solid rgba(46,192,220,.35);background:rgba(4,16,27,.45);color:#8fb3c7;font-size:2.2vh;font-weight:700;letter-spacing:.35vh;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;font-family:inherit}
 .tab[aria-selected="true"]{background:linear-gradient(180deg,rgba(46,192,220,.28),rgba(20,103,138,.22));border-color:#2ec0dc;color:#f4f7fa;box-shadow:0 0 2vh rgba(46,192,220,.35)}
 .tab:focus-visible{outline:3px solid #fcd05a;outline-offset:3px}
 .panels{flex-shrink:0}
 .panel{display:none}.panel.active{display:block}
 .melt{border-radius:2.2vh;padding:1.1vh 2vw 1.3vh;margin-bottom:1.2vh;background:linear-gradient(180deg,rgba(46,192,220,.10),rgba(20,103,138,.08));border:2px solid rgba(46,192,220,.45);box-shadow:0 1.5vh 4vh rgba(0,0,0,.45)}
 .melt h3{font-size:2vh;letter-spacing:.6vh;color:#2ec0dc;font-weight:700;margin-bottom:.8vh;text-transform:uppercase}.melt h3 span{color:#8fb3c7;font-weight:400;letter-spacing:.2vh;text-transform:none;margin-left:1vw}
-.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:1.4vw}
-.tile{background:rgba(4,16,27,.55);border-radius:1.4vh;padding:.8vh 1vw;text-align:center;border-top:3px solid #fcd05a}
-.tile b{display:block;font-size:2.2vh;color:#f4f7fa;font-weight:600}.tile i{display:block;font-style:normal;font-size:1.45vh;color:#6d8ea3;margin:.2vh 0 .3vh}
-.tile em{display:block;font-style:normal;font-size:4.4vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;line-height:1.05}
+.tiles{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2vw}
+.tile{background:rgba(4,16,27,.55);border-radius:1.4vh;padding:.8vh .7vw;text-align:center;border-top:3px solid #fcd05a}
+.tile b{display:block;font-size:2.2vh;color:#f4f7fa;font-weight:600}.tile i{display:block;font-style:normal;font-size:1.35vh;color:#6d8ea3;margin:.2vh 0 .3vh}
+.tile em{display:block;font-style:normal;font-size:4.2vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;line-height:1.05}
+#panel-us .melt:not(.gm) .tiles{grid-template-columns:repeat(6,1fr);gap:1vw}
+#panel-us .melt:not(.gm) .tile b{font-size:1.9vh}#panel-us .melt:not(.gm) .tile i{font-size:1.25vh}#panel-us .melt:not(.gm) .tile em{font-size:3.6vh}
 .gm{background:linear-gradient(180deg,rgba(252,208,90,.10),rgba(138,100,23,.08));border-color:rgba(252,208,90,.5)}.gm h3{color:#fcd05a}.gm .tile{border-top-color:#d4af37}
 .ca{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(200,16,46,.08));border-color:rgba(255,255,255,.35)}.ca h3{color:#f4f7fa}.ca .tile{border-top-color:#c8102e}
+.ps{background:linear-gradient(180deg,rgba(180,140,255,.12),rgba(80,50,140,.10));border-color:rgba(180,140,255,.45)}.ps h3{color:#c4b0ff}.ps .tile{border-top-color:#b48cff}
+#panel-ca .melt,#panel-ps .melt{padding:2vh 2vw 2.2vh;margin-bottom:0}
+#panel-ca .melt h3,#panel-ps .melt h3{font-size:2.4vh;margin-bottom:1.4vh}
+#panel-ca .tile,#panel-ps .tile{padding:2vh .8vw}
+#panel-ca .tile b,#panel-ps .tile b{font-size:2.4vh}
+#panel-ca .tile i,#panel-ps .tile i{font-size:1.55vh;margin:.4vh 0 .7vh}
+#panel-ca .tile em,#panel-ps .tile em{font-size:5.6vh}
+#panel-ps .tiles{grid-template-columns:repeat(6,1fr);gap:1vw}
+#panel-ps .tile b{font-size:1.9vh}#panel-ps .tile i{font-size:1.3vh}#panel-ps .tile em{font-size:4.4vh}
 footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh;flex-shrink:0}
-
-#panel-ca .melt{padding:2vh 2vw 2.2vh;margin-bottom:0}
-#panel-ca .melt h3{font-size:2.4vh;margin-bottom:1.4vh}
-#panel-ca .tile{padding:2.2vh 1vw}
-#panel-ca .tile b{font-size:2.8vh}
-#panel-ca .tile i{font-size:1.7vh;margin:.4vh 0 .8vh}
-#panel-ca .tile em{font-size:6.2vh}
-
 @media (orientation:portrait),(max-width:700px){
 html,body{height:auto;overflow:auto}
 body{padding:16px 14px 18px;min-height:100vh}
@@ -75,13 +78,19 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 .label h2{font-size:30px;letter-spacing:5px}.label span{font-size:11px;letter-spacing:1px}
 .price{font-size:60px;margin:6px 0 6px}
 .upd{font-size:12px;margin-bottom:10px}
-.tabs{gap:10px;margin:4px 0 14px}
-.tab{min-height:48px;font-size:15px;letter-spacing:2px;border-radius:12px;padding:12px 14px}
+.tabs{gap:8px;margin:4px 0 14px;flex-wrap:wrap}
+.tab{min-height:48px;font-size:13px;letter-spacing:1px;border-radius:12px;padding:12px 10px;flex:1 1 28%}
 .melt{padding:14px 12px;border-radius:16px;margin-bottom:14px}
 .melt h3{font-size:13px;letter-spacing:2px;margin-bottom:10px}.melt h3 span{display:block;margin:4px 0 0;font-size:11px}
-.tiles{grid-template-columns:1fr 1fr;gap:10px}
-.tile{padding:10px 8px;border-radius:10px}.tiles .tile:last-child{grid-column:1/-1}#panel-ca .tiles .tile:last-child{grid-column:auto}
-.tile b{font-size:15px}.tile i{font-size:11px;margin:2px 0 4px}.tile em{font-size:28px}
+.tiles,#panel-us .melt:not(.gm) .tiles,#panel-ps .tiles,#panel-ca .tiles{grid-template-columns:1fr 1fr;gap:10px}
+.tile,#panel-ca .tile,#panel-ps .tile{padding:10px 8px;border-radius:10px}
+#panel-us .melt:not(.gm) .tiles .tile:last-child,#panel-us .gm .tiles .tile:last-child{grid-column:1/-1}
+#panel-ca .tiles .tile:last-child,#panel-ps .tiles .tile:last-child{grid-column:auto}
+.tile b,#panel-us .melt:not(.gm) .tile b,#panel-ps .tile b,#panel-ca .tile b{font-size:14px}
+.tile i,#panel-us .melt:not(.gm) .tile i,#panel-ps .tile i,#panel-ca .tile i{font-size:11px;margin:2px 0 4px}
+.tile em,#panel-us .melt:not(.gm) .tile em,#panel-ps .tile em,#panel-ca .tile em{font-size:26px}
+#panel-ca .melt,#panel-ps .melt{padding:14px 12px;margin-bottom:14px}
+#panel-ca .melt h3,#panel-ps .melt h3{font-size:13px;margin-bottom:10px}
 footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-spacing:.5px;padding-top:10px}
 }
 </style></head><body>
@@ -96,17 +105,21 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
  <section class="card silver"><div class="label"><div class="sym">Ag</div><div><h2>SILVER</h2><span>SPOT · USD / OZ · 24 HR</span></div></div>
   <div class="price" id="silver">—</div><div class="upd" id="silver-u">Loading…</div></section>
 </main>
-<nav class="tabs" role="tablist" aria-label="Melt value country">
+<nav class="tabs" role="tablist" aria-label="Melt value category">
  <button type="button" class="tab" role="tab" id="tab-us" aria-controls="panel-us" aria-selected="true">US</button>
  <button type="button" class="tab" role="tab" id="tab-ca" aria-controls="panel-ca" aria-selected="false">Canadian</button>
+ <button type="button" class="tab" role="tab" id="tab-ps" aria-controls="panel-ps" aria-selected="false">Proof Sets</button>
 </nav>
 <div class="panels">
  <div class="panel active" id="panel-us" role="tabpanel" aria-labelledby="tab-us">
-  <section class="melt"><h3>Silver Coin Melt Values<span>silver content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Dime</b><i>90% silver · 0.07234 oz</i><em data-asw="0.07234">—</em></div><div class="tile"><b>Quarter</b><i>90% silver · 0.18084 oz</i><em data-asw="0.18084">—</em></div><div class="tile"><b>Half Dollar</b><i>90% silver · 0.36169 oz</i><em data-asw="0.36169">—</em></div><div class="tile"><b>Morgan / Peace $1</b><i>90% silver · 0.77344 oz</i><em data-asw="0.77344">—</em></div><div class="tile"><b>40% Half Dollar</b><i>Kennedy 1965–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div></div></section>
+  <section class="melt"><h3>Silver Coin Melt Values<span>silver content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Dime</b><i>90% silver · 0.07234 oz</i><em data-asw="0.07234">—</em></div><div class="tile"><b>Quarter</b><i>90% silver · 0.18084 oz</i><em data-asw="0.18084">—</em></div><div class="tile"><b>Half Dollar</b><i>90% silver · 0.36169 oz</i><em data-asw="0.36169">—</em></div><div class="tile"><b>Morgan / Peace $1</b><i>90% silver · 0.77344 oz</i><em data-asw="0.77344">—</em></div><div class="tile"><b>40% Half Dollar</b><i>Kennedy 1965–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div><div class="tile"><b>Ike Dollar</b><i>40% silver · 0.3161 oz</i><em data-asw="0.3161">—</em></div></div></section>
   <section class="melt gm"><h3>Pre-1933 Gold Coin Melt Values<span>gold content × live gold spot</span></h3><div class="tiles"><div class="tile"><b>$20 Double Eagle</b><i>90% gold · 0.9675 oz</i><em data-agw="0.9675">—</em></div><div class="tile"><b>$10 Eagle</b><i>90% gold · 0.48375 oz</i><em data-agw="0.48375">—</em></div><div class="tile"><b>$5 Half Eagle</b><i>90% gold · 0.24187 oz</i><em data-agw="0.24187">—</em></div><div class="tile"><b>$2.50 Quarter Eagle</b><i>90% gold · 0.12094 oz</i><em data-agw="0.12094">—</em></div><div class="tile"><b>$1 Gold Dollar</b><i>90% gold · 0.04837 oz</i><em data-agw="0.04837">—</em></div></div></section>
  </div>
  <div class="panel" id="panel-ca" role="tabpanel" aria-labelledby="tab-ca" hidden>
   <section class="melt ca"><h3>Canadian Silver Coin Melt Values<span>80% silver · 1920–1966 · content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>10¢</b><i>80% silver · 0.060 oz</i><em data-asw="0.06">—</em></div><div class="tile"><b>25¢</b><i>80% silver · 0.150 oz</i><em data-asw="0.15">—</em></div><div class="tile"><b>50¢</b><i>80% silver · 0.300 oz</i><em data-asw="0.3">—</em></div><div class="tile"><b>$1</b><i>80% silver · 0.600 oz</i><em data-asw="0.6">—</em></div></div></section>
+ </div>
+ <div class="panel" id="panel-ps" role="tabpanel" aria-labelledby="tab-ps" hidden>
+  <section class="melt ps"><h3>US Silver Proof Set Melt Values<span>total silver in set × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Classic Proof</b><i>1950–64 · 0.61487 oz</i><em data-asw="0.61487">—</em></div><div class="tile"><b>Proof Set</b><i>1968–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div><div class="tile"><b>Bicentennial 3-pc</b><i>1976 silver · 0.5379 oz</i><em data-asw="0.5379">—</em></div><div class="tile"><b>Silver Proof</b><i>1992–98 · 0.61487 oz</i><em data-asw="0.61487">—</em></div><div class="tile"><b>Silver Proof</b><i>1999–2018 · 1.33823 oz</i><em data-asw="1.33823">—</em></div><div class="tile"><b>Silver Proof</b><i>2022– · 1.473 oz</i><em data-asw="1.473">—</em></div></div></section>
  </div>
 </div>
 <footer><span>Spot from gold-api.com · melt values = metal content × spot (metal only) · updates every 60 s</span></footer>
@@ -120,9 +133,8 @@ function load(m,s){fetch('https://api.gold-api.com/price/'+s,{cache:'no-store'})
  var u=document.getElementById(m+'-u');u.className='upd';u.textContent='Updated '+new Date(d.updatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' ET';
 }).catch(function(){var u=document.getElementById(m+'-u');if(last[m]){u.className='upd stale';u.textContent='Reconnecting… showing last price from '+new Date(last[m]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}else u.textContent='Price unavailable – retrying';});}
 function prices(){load('gold','XAU');load('silver','XAG');}
-function showTab(id){var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
- tabs.forEach(function(t){var on=t.id==='tab-'+id;t.setAttribute('aria-selected',on?'true':'false');});
- panels.forEach(function(p){var on=p.id==='panel-'+id;p.classList.toggle('active',on);if(on)p.removeAttribute('hidden');else p.setAttribute('hidden','');});}
+function showTab(id){document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.id==='tab-'+id?'true':'false');});
+ document.querySelectorAll('.panel').forEach(function(p){var on=p.id==='panel-'+id;p.classList.toggle('active',on);if(on)p.removeAttribute('hidden');else p.setAttribute('hidden','');});}
 document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){showTab(t.id.replace('tab-',''));});});
 prices();setInterval(prices,60000);
 c();setInterval(c,1000);
