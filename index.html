@@ -50,19 +50,20 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 .tile{background:rgba(4,16,27,.55);border-radius:1.4vh;padding:.8vh .7vw;text-align:center;border-top:3px solid #fcd05a}
 .tile b{display:block;font-size:2.2vh;color:#f4f7fa;font-weight:600}.tile i{display:block;font-style:normal;font-size:1.35vh;color:#6d8ea3;margin:.2vh 0 .3vh}
 .tile em{display:block;font-style:normal;font-size:4.2vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;line-height:1.05}
-#panel-us .melt:not(.gm) .tiles{grid-template-columns:repeat(6,1fr);gap:1vw}
-#panel-us .melt:not(.gm) .tile b{font-size:1.9vh}#panel-us .melt:not(.gm) .tile i{font-size:1.25vh}#panel-us .melt:not(.gm) .tile em{font-size:3.6vh}
+#panel-us .melt:not(.gm) .tiles{grid-template-columns:repeat(3,1fr);gap:1vw}
+#panel-us .melt:not(.gm) .tile{padding:1vh 1vw}#panel-us .melt:not(.gm) .tile b{font-size:2.1vh}#panel-us .melt:not(.gm) .tile i{font-size:1.35vh}#panel-us .melt:not(.gm) .tile em{font-size:4vh}
 .gm{background:linear-gradient(180deg,rgba(252,208,90,.10),rgba(138,100,23,.08));border-color:rgba(252,208,90,.5)}.gm h3{color:#fcd05a}.gm .tile{border-top-color:#d4af37}
 .ca{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(200,16,46,.08));border-color:rgba(255,255,255,.35)}.ca h3{color:#f4f7fa}.ca .tile{border-top-color:#c8102e}
 .ps{background:linear-gradient(180deg,rgba(180,140,255,.12),rgba(80,50,140,.10));border-color:rgba(180,140,255,.45)}.ps h3{color:#c4b0ff}.ps .tile{border-top-color:#b48cff}
+#panel-ca .tiles{grid-template-columns:repeat(4,1fr)}
 #panel-ca .melt,#panel-ps .melt{padding:2vh 2vw 2.2vh;margin-bottom:0}
 #panel-ca .melt h3,#panel-ps .melt h3{font-size:2.4vh;margin-bottom:1.4vh}
 #panel-ca .tile,#panel-ps .tile{padding:2vh .8vw}
 #panel-ca .tile b,#panel-ps .tile b{font-size:2.4vh}
 #panel-ca .tile i,#panel-ps .tile i{font-size:1.55vh;margin:.4vh 0 .7vh}
 #panel-ca .tile em,#panel-ps .tile em{font-size:5.6vh}
-#panel-ps .tiles{grid-template-columns:repeat(6,1fr);gap:1vw}
-#panel-ps .tile b{font-size:1.9vh}#panel-ps .tile i{font-size:1.3vh}#panel-ps .tile em{font-size:4.4vh}
+#panel-ps .tiles{grid-template-columns:repeat(3,1fr);gap:1vw}
+#panel-ps .tile b{font-size:2.1vh}#panel-ps .tile i{font-size:1.4vh}#panel-ps .tile em{font-size:4.6vh}
 footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh;flex-shrink:0}
 @media (orientation:portrait),(max-width:700px){
 html,body{height:auto;overflow:auto}
@@ -82,10 +83,12 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 .tab{min-height:48px;font-size:13px;letter-spacing:1px;border-radius:12px;padding:12px 10px;flex:1 1 28%}
 .melt{padding:14px 12px;border-radius:16px;margin-bottom:14px}
 .melt h3{font-size:13px;letter-spacing:2px;margin-bottom:10px}.melt h3 span{display:block;margin:4px 0 0;font-size:11px}
-.tiles,#panel-us .melt:not(.gm) .tiles,#panel-ps .tiles,#panel-ca .tiles{grid-template-columns:1fr 1fr;gap:10px}
-.tile,#panel-ca .tile,#panel-ps .tile{padding:10px 8px;border-radius:10px}
-#panel-us .melt:not(.gm) .tiles .tile:last-child,#panel-us .gm .tiles .tile:last-child{grid-column:1/-1}
-#panel-ca .tiles .tile:last-child,#panel-ps .tiles .tile:last-child{grid-column:auto}
+.tiles{grid-template-columns:1fr 1fr;gap:10px}
+#panel-us .melt:not(.gm) .tiles,#panel-ps .tiles{grid-template-columns:repeat(3,1fr);gap:8px}
+#panel-ca .tiles{grid-template-columns:1fr 1fr;gap:10px}
+.tile,#panel-ca .tile,#panel-ps .tile,#panel-us .melt:not(.gm) .tile{padding:10px 6px;border-radius:10px}
+#panel-us .melt:not(.gm) .tiles .tile:last-child,#panel-ps .tiles .tile:last-child,#panel-ca .tiles .tile:last-child{grid-column:auto}
+#panel-us .gm .tiles .tile:last-child{grid-column:1/-1}
 .tile b,#panel-us .melt:not(.gm) .tile b,#panel-ps .tile b,#panel-ca .tile b{font-size:14px}
 .tile i,#panel-us .melt:not(.gm) .tile i,#panel-ps .tile i,#panel-ca .tile i{font-size:11px;margin:2px 0 4px}
 .tile em,#panel-us .melt:not(.gm) .tile em,#panel-ps .tile em,#panel-ca .tile em{font-size:26px}
