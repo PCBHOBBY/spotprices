@@ -63,6 +63,7 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 #panel-ca .tile b,#panel-ps .tile b{font-size:2.4vh}
 #panel-ca .tile i,#panel-ps .tile i{font-size:1.55vh;margin:.4vh 0 .7vh}
 #panel-ca .tile em,#panel-ps .tile em{font-size:5.6vh}
+#panel-ca .mx .tiles{grid-template-columns:repeat(6,1fr);gap:.8vw}#panel-ca .melt.mx{margin-top:1.2vh}#panel-ca .mx .tile{padding:1vh .5vw}#panel-ca .mx .tile b{font-size:2vh}#panel-ca .mx .tile b small{font-size:.75em;color:#8fb3c7;font-weight:500}#panel-ca .mx .tile i{font-size:1.3vh;margin:.2vh 0 .3vh}#panel-ca .mx .tile em{font-size:3.6vh}
 #panel-ps .tiles{grid-template-columns:repeat(3,1fr);gap:1vw}
 #panel-ps .tile b{font-size:2.1vh}#panel-ps .tile i{font-size:1.4vh}#panel-ps .tile em{font-size:4.6vh}
 #panel-bu .bs{background:linear-gradient(180deg,rgba(220,228,236,.08),rgba(120,135,150,.06));border-color:rgba(201,209,217,.45)}#panel-bu .bs h3{color:#e3e9ef}#panel-bu .bs .tile{border-top-color:#c9d1d9}
@@ -107,6 +108,7 @@ main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh
 #panel-ca .tiles{grid-template-columns:repeat(4,1fr)}
 #panel-ca .tile,#panel-ps .tile{padding:1vh .65vw}
 #panel-ca .tile b{font-size:2vh}#panel-ca .tile i{font-size:1.25vh;margin:.25vh 0 .4vh}#panel-ca .tile em{font-size:4.4vh}
+#panel-ca .melt.mx{margin-top:.8vh}#panel-ca .mx .tiles{gap:.55vw}#panel-ca .mx .tile{padding:.5vh .45vw}#panel-ca .mx .tile b{font-size:1.65vh}#panel-ca .mx .tile i{font-size:1.1vh;margin:.15vh 0 .25vh}#panel-ca .mx .tile em{font-size:3vh}
 #panel-ps .tiles{grid-template-columns:repeat(3,1fr);gap:.7vw}
 #panel-ps .tile b{font-size:1.7vh}#panel-ps .tile i{font-size:1.15vh;margin:.2vh 0 .35vh}#panel-ps .tile em{font-size:3.6vh}
 #panel-bu .bs .tiles{gap:.65vw}#panel-bu .bg .tiles{gap:.55vw}
@@ -153,6 +155,7 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 .tile em,#panel-us .melt:not(.gm) .tile em,#panel-ps .tile em,#panel-ca .tile em{font-size:26px}
 #panel-ca .melt,#panel-ps .melt{padding:14px 12px;margin-bottom:14px}
 #panel-ca .melt h3,#panel-ps .melt h3{font-size:13px;margin-bottom:10px}
+#panel-ca .mx .tiles{grid-template-columns:1fr 1fr;gap:8px}#panel-ca .melt.mx{margin-top:0}#panel-ca .mx .tile{padding:10px 6px}#panel-ca .mx .tile b{font-size:14px}#panel-ca .mx .tile i{font-size:11px;margin:2px 0 4px}#panel-ca .mx .tile em{font-size:24px}
 #panel-bu .bs .tiles,#panel-bu .bg .tiles{grid-template-columns:1fr 1fr;gap:8px}
 #panel-bu .tiles .tile:last-child{grid-column:1/-1}
 .tab{flex:1 1 40%}
@@ -163,9 +166,19 @@ header{order:0}nav.tabs{order:1;margin:0 0 4px}
 #panel-sg .mv{font-size:24px;align-self:end;padding-bottom:10px}
 #panel-sg .sgtot{flex-wrap:wrap;padding:8px 4px 0;gap:10px}#panel-sg .sgtot span{font-size:15px;letter-spacing:2px}#panel-sg .sgtot em{font-size:32px}
 #panel-sg .clr{width:100%;min-height:52px;font-size:15px;border-radius:12px;order:3}
-.tab{flex:1 1 28%;letter-spacing:.5px;padding:12px 6px}#panel-sg .x{display:none}
+.tab{flex:1 1 28%;letter-spacing:.5px;padding:12px 4px;font-size:12px;white-space:nowrap}#panel-sg .x{display:none}
 main{order:2}.panels{order:3}footer{order:4}
 footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-spacing:.5px;padding-top:10px}
+}
+body.nospot main{display:none!important}
+@media (orientation:landscape) and (min-width:901px){
+body.nospot .tabs{margin-top:1.6vh}
+body.nospot #panel-ps .melt{padding:3vh 2.4vw 3.4vh}body.nospot #panel-ps .melt h3{font-size:3vh;margin-bottom:2.4vh}
+body.nospot #panel-ps .tiles{gap:2vh 1.4vw}body.nospot #panel-ps .tile{padding:4.5vh 1vw}body.nospot #panel-ps .tile b{font-size:3.4vh}body.nospot #panel-ps .tile i{font-size:1.9vh;margin:.8vh 0 1.4vh}body.nospot #panel-ps .tile em{font-size:9vh}
+body.nospot #panel-sg .melt{padding:2.4vh 2vw}body.nospot #panel-sg .melt h3{font-size:2.6vh;margin-bottom:1.4vh}
+body.nospot #panel-sg .sgrow{padding:1.3vh 1.6vw;margin-bottom:1.2vh}body.nospot #panel-sg .sgrow b{font-size:3.4vh}body.nospot #panel-sg .sgrow i{font-size:1.8vh}body.nospot #panel-sg .pd{font-size:3.2vh}body.nospot #panel-sg .pd small{font-size:1.6vh}
+body.nospot #panel-sg label{font-size:1.7vh}body.nospot #panel-sg input{min-height:6.4vh;font-size:3.8vh}body.nospot #panel-sg .mv{font-size:4.8vh}
+body.nospot #panel-sg .sgtot em{font-size:6vh}body.nospot #panel-sg .sgtot span{font-size:3vh}body.nospot #panel-sg .clr{min-height:6vh;font-size:2.2vh;padding:1vh 3vw}
 }
 </style></head><body>
 <header>
@@ -181,7 +194,7 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
 </main>
 <nav class="tabs" role="tablist" aria-label="Melt value category">
  <button type="button" class="tab" role="tab" id="tab-us" aria-controls="panel-us" aria-selected="true">US</button>
- <button type="button" class="tab" role="tab" id="tab-ca" aria-controls="panel-ca" aria-selected="false">Canadian</button>
+ <button type="button" class="tab" role="tab" id="tab-ca" aria-controls="panel-ca" aria-selected="false">World Silver</button>
  <button type="button" class="tab" role="tab" id="tab-ps" aria-controls="panel-ps" aria-selected="false">Proof Sets</button>
  <button type="button" class="tab" role="tab" id="tab-bu" aria-controls="panel-bu" aria-selected="false">Bullion</button>
  <button type="button" class="tab" role="tab" id="tab-sg" aria-controls="panel-sg" aria-selected="false">Scrap Gold</button>
@@ -192,7 +205,8 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
   <section class="melt gm"><h3>Pre-1933 Gold Coin Melt Values<span>gold content × live gold spot</span></h3><div class="tiles"><div class="tile"><b>$20 Double Eagle</b><i>90% gold · 0.9675 ozt</i><em data-agw="0.9675">—</em></div><div class="tile"><b>$10 Eagle</b><i>90% gold · 0.48375 ozt</i><em data-agw="0.48375">—</em></div><div class="tile"><b>$5 Half Eagle</b><i>90% gold · 0.24187 ozt</i><em data-agw="0.24187">—</em></div><div class="tile"><b>$2.50 Quarter Eagle</b><i>90% gold · 0.12094 ozt</i><em data-agw="0.12094">—</em></div><div class="tile"><b>$1 Gold Dollar</b><i>90% gold · 0.04837 ozt</i><em data-agw="0.04837">—</em></div></div></section>
  </div>
  <div class="panel" id="panel-ca" role="tabpanel" aria-labelledby="tab-ca" hidden>
-  <section class="melt ca"><h3>Canadian Silver Coin Melt Values<span>80% silver · 1920–1966 · content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>10¢</b><i>80% silver · 0.060 ozt</i><em data-asw="0.06">—</em></div><div class="tile"><b>25¢</b><i>80% silver · 0.150 ozt</i><em data-asw="0.15">—</em></div><div class="tile"><b>50¢</b><i>80% silver · 0.300 ozt</i><em data-asw="0.3">—</em></div><div class="tile"><b>$1</b><i>80% silver · 0.600 ozt</i><em data-asw="0.6">—</em></div></div></section>
+  <section class="melt ca"><h3>Canada Silver Coin Melt Values<span>80% silver · 1920–1966 · content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>10¢</b><i>80% silver · 0.060 ozt</i><em data-asw="0.06">—</em></div><div class="tile"><b>25¢</b><i>80% silver · 0.150 ozt</i><em data-asw="0.15">—</em></div><div class="tile"><b>50¢</b><i>80% silver · 0.300 ozt</i><em data-asw="0.3">—</em></div><div class="tile"><b>$1</b><i>80% silver · 0.600 ozt</i><em data-asw="0.6">—</em></div></div></section>
+  <section class="melt ca mx"><h3>Mexico Silver Coin Melt Values<span>content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Onza <small>1949–Date</small></b><i>99.9% silver · 0.9999 ozt</i><em data-asw="0.9999">—</em></div><div class="tile"><b>100 Pesos <small>1977–79</small></b><i>72% silver · 0.6428 ozt</i><em data-asw="0.6428">—</em></div><div class="tile"><b>25 Pesos <small>1968–72</small></b><i>72% silver · 0.5208 ozt</i><em data-asw="0.5208">—</em></div><div class="tile"><b>10 Pesos <small>1955–60</small></b><i>90% silver · 0.8356 ozt</i><em data-asw="0.8356">—</em></div><div class="tile"><b>5 Pesos <small>1955–59</small></b><i>72% silver · 0.4178 ozt</i><em data-asw="0.4178">—</em></div><div class="tile"><b>5 Pesos <small>1950–54</small></b><i>72% silver · 0.6430 ozt</i><em data-asw="0.6430">—</em></div><div class="tile"><b>2 Pesos <small>1921</small></b><i>90% silver · 0.7716 ozt</i><em data-asw="0.7716">—</em></div><div class="tile"><b>1 Peso <small>1957–67</small></b><i>10% silver · 0.0514 ozt</i><em data-asw="0.0514">—</em></div><div class="tile"><b>1 Peso <small>1950</small></b><i>30% silver · 0.1286 ozt</i><em data-asw="0.1286">—</em></div><div class="tile"><b>1 Peso <small>1947–49</small></b><i>50% silver · 0.2250 ozt</i><em data-asw="0.2250">—</em></div><div class="tile"><b>1 Peso <small>1920–45</small></b><i>72% silver · 0.3856 ozt</i><em data-asw="0.3856">—</em></div><div class="tile"><b>1 Peso <small>1866–1914</small></b><i>90.3% silver · 0.7859 ozt</i><em data-asw="0.7859">—</em></div></div></section>
  </div>
  <div class="panel" id="panel-ps" role="tabpanel" aria-labelledby="tab-ps" hidden>
   <section class="melt ps"><h3>US Silver Proof Set Melt Values<span>total silver in set × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Classic Proof</b><i>1950–64 · 0.61487 ozt</i><em data-asw="0.61487">—</em></div><div class="tile"><b>Proof Set</b><i>1968–70 · 0.1479 ozt</i><em data-asw="0.1479">—</em></div><div class="tile"><b>Bicentennial 3-pc</b><i>1976 silver · 0.5379 ozt</i><em data-asw="0.5379">—</em></div><div class="tile"><b>Silver Proof</b><i>1992–98 · 0.61487 ozt</i><em data-asw="0.61487">—</em></div><div class="tile"><b>Silver Proof</b><i>1999–2018 · 1.33823 ozt</i><em data-asw="1.33823">—</em></div><div class="tile"><b>Silver Proof</b><i>2022– · 1.473 ozt</i><em data-asw="1.473">—</em></div></div></section>
@@ -216,7 +230,7 @@ function load(m,s){fetch('https://api.gold-api.com/price/'+s,{cache:'no-store'})
  var u=document.getElementById(m+'-u');u.className='upd';u.textContent='Updated '+new Date(d.updatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' ET';
 }).catch(function(){var u=document.getElementById(m+'-u');if(last[m]){u.className='upd stale';u.textContent='Reconnecting… showing last price from '+new Date(last[m]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}else u.textContent='Price unavailable – retrying';});}
 function prices(){load('gold','XAU');load('silver','XAG');}
-function showTab(id){document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.id==='tab-'+id?'true':'false');});
+function showTab(id){document.body.classList.toggle('nospot',id==='ps'||id==='sg');document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.id==='tab-'+id?'true':'false');});
  document.querySelectorAll('.panel').forEach(function(p){var on=p.id==='panel-'+id;p.classList.toggle('active',on);if(on)p.removeAttribute('hidden');else p.setAttribute('hidden','');});}
 document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){showTab(t.id.replace('tab-',''));});});
 var gs=0;function sg(){var t=0;document.querySelectorAll('#panel-sg .sgrow').forEach(function(r){var p=parseFloat(r.dataset.p),v=parseFloat(r.querySelector('input').value),d=gs*0.05*p;r.querySelector('.ppd').textContent=gs?fmt(d):'—';var m=(v>0&&gs)?v*d:0;t+=m;r.querySelector('.mv').textContent=fmt(m);});document.getElementById('sgtotal').textContent=fmt(t);}
