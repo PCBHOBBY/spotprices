@@ -166,7 +166,7 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
   <section class="melt ps"><h3>US Silver Proof Set Melt Values<span>total silver in set × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Classic Proof</b><i>1950–64 · 0.61487 oz</i><em data-asw="0.61487">—</em></div><div class="tile"><b>Proof Set</b><i>1968–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div><div class="tile"><b>Bicentennial 3-pc</b><i>1976 silver · 0.5379 oz</i><em data-asw="0.5379">—</em></div><div class="tile"><b>Silver Proof</b><i>1992–98 · 0.61487 oz</i><em data-asw="0.61487">—</em></div><div class="tile"><b>Silver Proof</b><i>1999–2018 · 1.33823 oz</i><em data-asw="1.33823">—</em></div><div class="tile"><b>Silver Proof</b><i>2022– · 1.473 oz</i><em data-asw="1.473">—</em></div></div></section>
  </div>
 </div>
-<footer><span>Spot from gold-api.com · melt values = metal content × spot (metal only) · updates every 60 s</span></footer>
+<footer><span>Spot from gold-api.com · melt values = metal content × spot (metal only) · updates every 30 s</span></footer>
 <script>
 function c(){var x=new Date();document.getElementById('t').textContent=x.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
 document.getElementById('d').textContent=x.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});}
@@ -180,6 +180,6 @@ function prices(){load('gold','XAU');load('silver','XAG');}
 function showTab(id){document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.id==='tab-'+id?'true':'false');});
  document.querySelectorAll('.panel').forEach(function(p){var on=p.id==='panel-'+id;p.classList.toggle('active',on);if(on)p.removeAttribute('hidden');else p.setAttribute('hidden','');});}
 document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){showTab(t.id.replace('tab-',''));});});
-prices();setInterval(prices,60000);
+prices();setInterval(prices,30000);
 c();setInterval(c,1000);
 </script></body></html>
