@@ -50,7 +50,7 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 .tile{background:rgba(4,16,27,.55);border-radius:1.4vh;padding:.8vh .7vw;text-align:center;border-top:3px solid #fcd05a}
 .tile b{display:block;font-size:2.2vh;color:#f4f7fa;font-weight:600}.tile i{display:block;font-style:normal;font-size:1.35vh;color:#6d8ea3;margin:.2vh 0 .3vh}
 .tile em{display:block;font-style:normal;font-size:4.2vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;line-height:1.05}
-#panel-us .melt:not(.gm) .tiles{grid-template-columns:repeat(3,1fr);gap:1vw}
+#panel-us .melt:not(.gm) .tiles{grid-template-columns:repeat(4,1fr);gap:1vw}
 #panel-us .melt:not(.gm) .tile{padding:1vh 1vw}#panel-us .melt:not(.gm) .tile b{font-size:2.1vh}#panel-us .melt:not(.gm) .tile i{font-size:1.35vh}#panel-us .melt:not(.gm) .tile em{font-size:4vh}
 .gm{background:linear-gradient(180deg,rgba(252,208,90,.10),rgba(138,100,23,.08));border-color:rgba(252,208,90,.5)}.gm h3{color:#fcd05a}.gm .tile{border-top-color:#d4af37}
 .ca{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(200,16,46,.08));border-color:rgba(255,255,255,.35)}.ca h3{color:#f4f7fa}.ca .tile{border-top-color:#c8102e}
@@ -79,7 +79,7 @@ main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh
 .melt h3{font-size:1.55vh;margin-bottom:.4vh;letter-spacing:.35vh}
 .tiles{gap:.7vw}
 .tile{padding:.4vh .55vw}.tile b{font-size:1.6vh}.tile i{font-size:1.05vh;margin:.08vh 0 .15vh}.tile em{font-size:3vh}
-#panel-us .melt:not(.gm) .tiles{grid-template-columns:repeat(3,1fr);gap:.65vw}
+#panel-us .melt:not(.gm) .tiles{grid-template-columns:repeat(4,1fr);gap:.65vw}
 #panel-us .melt:not(.gm) .tile{padding:.45vh .6vw}
 #panel-us .melt:not(.gm) .tile b{font-size:1.65vh}
 #panel-us .melt:not(.gm) .tile i{font-size:1.1vh}
@@ -124,7 +124,8 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 .melt{padding:14px 12px;border-radius:16px;margin-bottom:14px}
 .melt h3{font-size:13px;letter-spacing:2px;margin-bottom:10px}.melt h3 span{display:block;margin:4px 0 0;font-size:11px}
 .tiles{grid-template-columns:1fr 1fr;gap:10px}
-#panel-us .melt:not(.gm) .tiles,#panel-ps .tiles{grid-template-columns:repeat(3,1fr);gap:8px}
+#panel-us .melt:not(.gm) .tiles{grid-template-columns:1fr 1fr;gap:8px}
+#panel-ps .tiles{grid-template-columns:repeat(3,1fr);gap:8px}
 #panel-ca .tiles{grid-template-columns:1fr 1fr;gap:10px}
 .tile,#panel-ca .tile,#panel-ps .tile,#panel-us .melt:not(.gm) .tile{padding:10px 6px;border-radius:10px}
 #panel-us .melt:not(.gm) .tiles .tile:last-child,#panel-ps .tiles .tile:last-child,#panel-ca .tiles .tile:last-child{grid-column:auto}
@@ -155,7 +156,7 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
 </nav>
 <div class="panels">
  <div class="panel active" id="panel-us" role="tabpanel" aria-labelledby="tab-us">
-  <section class="melt"><h3>Silver Coin Melt Values<span>silver content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Dime</b><i>90% silver · 0.07234 oz</i><em data-asw="0.07234">—</em></div><div class="tile"><b>Quarter</b><i>90% silver · 0.18084 oz</i><em data-asw="0.18084">—</em></div><div class="tile"><b>Half Dollar</b><i>90% silver · 0.36169 oz</i><em data-asw="0.36169">—</em></div><div class="tile"><b>Morgan / Peace $1</b><i>90% silver · 0.77344 oz</i><em data-asw="0.77344">—</em></div><div class="tile"><b>40% Half Dollar</b><i>Kennedy 1965–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div><div class="tile"><b>Ike Dollar</b><i>40% silver · 0.3161 oz</i><em data-asw="0.3161">—</em></div></div></section>
+  <section class="melt"><h3>Silver Coin Melt Values<span>silver content × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Dime</b><i>90% silver · 0.07234 oz</i><em data-asw="0.07234">—</em></div><div class="tile"><b>Quarter</b><i>90% silver · 0.18084 oz</i><em data-asw="0.18084">—</em></div><div class="tile"><b>Half Dollar</b><i>90% silver · 0.36169 oz</i><em data-asw="0.36169">—</em></div><div class="tile"><b>Morgan / Peace $1</b><i>90% silver · 0.77344 oz</i><em data-asw="0.77344">—</em></div><div class="tile"><b>40% Half Dollar</b><i>Kennedy 1965–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div><div class="tile"><b>Ike Dollar</b><i>40% silver · 0.3161 oz</i><em data-asw="0.3161">—</em></div><div class="tile"><b>War Nickel</b><i>35% silver · 0.05626 oz</i><em data-asw="0.05626">—</em></div></div></section>
   <section class="melt gm"><h3>Pre-1933 Gold Coin Melt Values<span>gold content × live gold spot</span></h3><div class="tiles"><div class="tile"><b>$20 Double Eagle</b><i>90% gold · 0.9675 oz</i><em data-agw="0.9675">—</em></div><div class="tile"><b>$10 Eagle</b><i>90% gold · 0.48375 oz</i><em data-agw="0.48375">—</em></div><div class="tile"><b>$5 Half Eagle</b><i>90% gold · 0.24187 oz</i><em data-agw="0.24187">—</em></div><div class="tile"><b>$2.50 Quarter Eagle</b><i>90% gold · 0.12094 oz</i><em data-agw="0.12094">—</em></div><div class="tile"><b>$1 Gold Dollar</b><i>90% gold · 0.04837 oz</i><em data-agw="0.04837">—</em></div></div></section>
  </div>
  <div class="panel" id="panel-ca" role="tabpanel" aria-labelledby="tab-ca" hidden>
