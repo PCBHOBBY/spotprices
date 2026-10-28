@@ -65,6 +65,8 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 #panel-ca .tile em,#panel-ps .tile em{font-size:5.6vh}
 #panel-ps .tiles{grid-template-columns:repeat(3,1fr);gap:1vw}
 #panel-ps .tile b{font-size:2.1vh}#panel-ps .tile i{font-size:1.4vh}#panel-ps .tile em{font-size:4.6vh}
+#panel-bu .bs{background:linear-gradient(180deg,rgba(220,228,236,.08),rgba(120,135,150,.06));border-color:rgba(201,209,217,.45)}#panel-bu .bs h3{color:#e3e9ef}#panel-bu .bs .tile{border-top-color:#c9d1d9}
+#panel-bu .bs .tiles{grid-template-columns:repeat(5,1fr);gap:1vw}#panel-bu .bg .tiles{grid-template-columns:repeat(7,1fr);gap:.8vw}
 footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh;flex-shrink:0}
 /* tv-fit — large landscape / OptiSigns only; keep off phones */
 @media (min-width:1100px) and (orientation:landscape){
@@ -97,6 +99,9 @@ main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh
 #panel-ca .tile b{font-size:2vh}#panel-ca .tile i{font-size:1.25vh;margin:.25vh 0 .4vh}#panel-ca .tile em{font-size:4.4vh}
 #panel-ps .tiles{grid-template-columns:repeat(3,1fr);gap:.7vw}
 #panel-ps .tile b{font-size:1.7vh}#panel-ps .tile i{font-size:1.15vh;margin:.2vh 0 .35vh}#panel-ps .tile em{font-size:3.6vh}
+#panel-bu .bs .tiles{gap:.65vw}#panel-bu .bg .tiles{gap:.55vw}
+#panel-bu .tile{padding:.45vh .5vw}#panel-bu .tile b{font-size:1.65vh}#panel-bu .tile i{font-size:1.05vh}#panel-bu .tile em{font-size:3vh}
+#panel-bu .bg .tile em{font-size:2.7vh}
 header{padding-bottom:1vh;flex:0 0 auto}
 .logo{height:8.5vh}.brand h1{font-size:4vh}.brand small{font-size:1.55vh;margin-bottom:.25vh}
 .time .t{font-size:4vh}.time .d{font-size:1.65vh}
@@ -136,6 +141,9 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 .tile em,#panel-us .melt:not(.gm) .tile em,#panel-ps .tile em,#panel-ca .tile em{font-size:26px}
 #panel-ca .melt,#panel-ps .melt{padding:14px 12px;margin-bottom:14px}
 #panel-ca .melt h3,#panel-ps .melt h3{font-size:13px;margin-bottom:10px}
+#panel-bu .bs .tiles,#panel-bu .bg .tiles{grid-template-columns:1fr 1fr;gap:8px}
+#panel-bu .tiles .tile:last-child{grid-column:1/-1}
+.tab{flex:1 1 40%}
 footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-spacing:.5px;padding-top:10px}
 }
 </style></head><body>
@@ -154,6 +162,7 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
  <button type="button" class="tab" role="tab" id="tab-us" aria-controls="panel-us" aria-selected="true">US</button>
  <button type="button" class="tab" role="tab" id="tab-ca" aria-controls="panel-ca" aria-selected="false">Canadian</button>
  <button type="button" class="tab" role="tab" id="tab-ps" aria-controls="panel-ps" aria-selected="false">Proof Sets</button>
+ <button type="button" class="tab" role="tab" id="tab-bu" aria-controls="panel-bu" aria-selected="false">Bullion</button>
 </nav>
 <div class="panels">
  <div class="panel active" id="panel-us" role="tabpanel" aria-labelledby="tab-us">
@@ -165,6 +174,10 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
  </div>
  <div class="panel" id="panel-ps" role="tabpanel" aria-labelledby="tab-ps" hidden>
   <section class="melt ps"><h3>US Silver Proof Set Melt Values<span>total silver in set × live silver spot</span></h3><div class="tiles"><div class="tile"><b>Classic Proof</b><i>1950–64 · 0.61487 oz</i><em data-asw="0.61487">—</em></div><div class="tile"><b>Proof Set</b><i>1968–70 · 0.1479 oz</i><em data-asw="0.1479">—</em></div><div class="tile"><b>Bicentennial 3-pc</b><i>1976 silver · 0.5379 oz</i><em data-asw="0.5379">—</em></div><div class="tile"><b>Silver Proof</b><i>1992–98 · 0.61487 oz</i><em data-asw="0.61487">—</em></div><div class="tile"><b>Silver Proof</b><i>1999–2018 · 1.33823 oz</i><em data-asw="1.33823">—</em></div><div class="tile"><b>Silver Proof</b><i>2022– · 1.473 oz</i><em data-asw="1.473">—</em></div></div></section>
+ </div>
+<div class="panel" id="panel-bu" role="tabpanel" aria-labelledby="tab-bu" hidden>
+  <section class="melt bs"><h3>Silver Bullion Melt Values<span>.999 fine · weight × live silver spot</span></h3><div class="tiles"><div class="tile"><b>1 Gram</b><i>Silver · 0.03215 ozt</i><em data-asw="0.0321507">—</em></div><div class="tile"><b>1/10 oz</b><i>Silver · 0.1 ozt</i><em data-asw="0.1">—</em></div><div class="tile"><b>1/4 oz</b><i>Silver · 0.25 ozt</i><em data-asw="0.25">—</em></div><div class="tile"><b>1/2 oz</b><i>Silver · 0.5 ozt</i><em data-asw="0.5">—</em></div><div class="tile"><b>1 oz</b><i>Silver · 1 ozt</i><em data-asw="1">—</em></div><div class="tile"><b>5 oz</b><i>Silver · 5 ozt</i><em data-asw="5">—</em></div><div class="tile"><b>10 oz</b><i>Silver · 10 ozt</i><em data-asw="10">—</em></div><div class="tile"><b>Kilo</b><i>Silver · 32.15 ozt</i><em data-asw="32.1507">—</em></div><div class="tile"><b>100 oz</b><i>Silver · 100 ozt</i><em data-asw="100">—</em></div></div></section>
+  <section class="melt gm bg"><h3>Gold Bullion Melt Values<span>.999 fine · weight × live gold spot</span></h3><div class="tiles"><div class="tile"><b>1/2 Gram</b><i>Gold · 0.01608 ozt</i><em data-agw="0.0160754">—</em></div><div class="tile"><b>1 Gram</b><i>Gold · 0.03215 ozt</i><em data-agw="0.0321507">—</em></div><div class="tile"><b>1/10 oz</b><i>Gold · 0.1 ozt</i><em data-agw="0.1">—</em></div><div class="tile"><b>5 Gram</b><i>Gold · 0.16075 ozt</i><em data-agw="0.160754">—</em></div><div class="tile"><b>1/4 oz</b><i>Gold · 0.25 ozt</i><em data-agw="0.25">—</em></div><div class="tile"><b>1/2 oz</b><i>Gold · 0.5 ozt</i><em data-agw="0.5">—</em></div><div class="tile"><b>1 oz</b><i>Gold · 1 ozt</i><em data-agw="1">—</em></div></div></section>
  </div>
 </div>
 <footer><span>Spot from gold-api.com · melt values = metal content × spot (metal only) · updates every 30 s</span></footer>
