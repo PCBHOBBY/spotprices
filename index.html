@@ -69,6 +69,16 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 #panel-bu .bs .tiles{grid-template-columns:repeat(5,1fr);gap:1vw}#panel-bu .bg .tiles{grid-template-columns:repeat(7,1fr);gap:.8vw}
 footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh;flex-shrink:0}
 /* tv-fit — large landscape / OptiSigns only; keep off phones */
+#panel-sg .sgrow{display:grid;grid-template-columns:1.1fr 1fr 1.3fr 1.2fr;align-items:center;gap:1.2vw;background:rgba(4,16,27,.55);border-radius:1.4vh;padding:1vh 1.2vw;margin-bottom:.9vh;border-top:3px solid #d4af37}
+#panel-sg .sgrow b{display:block;font-size:2.6vh;color:#f4f7fa;font-weight:700}#panel-sg .sgrow i{display:block;font-style:normal;font-size:1.4vh;color:#6d8ea3}
+#panel-sg .pd{font-size:2.2vh;color:#e9d9a6;font-variant-numeric:tabular-nums}#panel-sg .pd small{display:block;font-size:1.3vh;color:#6d8ea3}
+#panel-sg label{display:block;font-size:1.3vh;color:#8fb3c7;letter-spacing:.15vh;margin-bottom:.3vh}
+#panel-sg input{width:100%;min-height:5.4vh;font-size:2.8vh;font-family:inherit;font-weight:700;padding:.6vh 1vw;border-radius:1.1vh;border:2px solid rgba(252,208,90,.5);background:rgba(2,10,18,.8);color:#f4f7fa;text-align:right;font-variant-numeric:tabular-nums}
+#panel-sg input:focus{outline:none;border-color:#fcd05a;box-shadow:0 0 1.5vh rgba(252,208,90,.35)}
+#panel-sg .mv{text-align:right;font-size:3.6vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums}
+#panel-sg .sgtot{display:flex;align-items:center;justify-content:space-between;gap:1.5vw;padding:1vh 1.2vw 0}
+#panel-sg .sgtot span{font-size:2.2vh;letter-spacing:.4vh;color:#fcd05a;font-weight:700;text-transform:uppercase}#panel-sg .sgtot em{font-style:normal;font-size:5vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;margin-left:auto}
+#panel-sg .clr{min-height:5.4vh;padding:.8vh 2vw;border-radius:1.2vh;border:2px solid rgba(252,208,90,.5);background:rgba(4,16,27,.6);color:#fcd05a;font-family:inherit;font-weight:700;font-size:1.9vh;letter-spacing:.3vh;text-transform:uppercase;cursor:pointer}
 @media (min-width:1100px) and (orientation:landscape){
 main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh;gap:1.8vw;align-content:center}
 .card{padding:.6vh 1.4vw;overflow:hidden}
@@ -102,6 +112,8 @@ main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh
 #panel-bu .bs .tiles{gap:.65vw}#panel-bu .bg .tiles{gap:.55vw}
 #panel-bu .tile{padding:.45vh .5vw}#panel-bu .tile b{font-size:1.65vh}#panel-bu .tile i{font-size:1.05vh}#panel-bu .tile em{font-size:3vh}
 #panel-bu .bg .tile em{font-size:2.7vh}
+#panel-sg .sgrow{padding:.7vh 1vw;margin-bottom:.6vh}#panel-sg .sgrow b{font-size:2.2vh}#panel-sg input{min-height:4.6vh;font-size:2.4vh}#panel-sg .mv{font-size:3.2vh}#panel-sg .sgtot em{font-size:4.2vh}#panel-sg .clr{min-height:4.4vh}
+
 header{padding-bottom:1vh;flex:0 0 auto}
 .logo{height:8.5vh}.brand h1{font-size:4vh}.brand small{font-size:1.55vh;margin-bottom:.25vh}
 .time .t{font-size:4vh}.time .d{font-size:1.65vh}
@@ -144,7 +156,15 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 #panel-bu .bs .tiles,#panel-bu .bg .tiles{grid-template-columns:1fr 1fr;gap:8px}
 #panel-bu .tiles .tile:last-child{grid-column:1/-1}
 .tab{flex:1 1 40%}
-header{order:0}nav.tabs{order:1;margin:0 0 4px}main{order:2}.panels{order:3}footer{order:4}
+header{order:0}nav.tabs{order:1;margin:0 0 4px}
+#panel-sg .sgrow{grid-template-columns:1fr 1fr;gap:8px 10px;padding:12px;border-radius:12px;margin-bottom:10px}
+#panel-sg .sgrow b{font-size:20px}#panel-sg .sgrow i{font-size:12px}#panel-sg .pd{font-size:15px;text-align:right}#panel-sg .pd small{font-size:11px}
+#panel-sg label{font-size:12px;margin-bottom:4px}#panel-sg input{min-height:52px;font-size:22px;padding:8px 12px;border-radius:10px}
+#panel-sg .mv{font-size:24px;align-self:end;padding-bottom:10px}
+#panel-sg .sgtot{flex-wrap:wrap;padding:8px 4px 0;gap:10px}#panel-sg .sgtot span{font-size:15px;letter-spacing:2px}#panel-sg .sgtot em{font-size:32px}
+#panel-sg .clr{width:100%;min-height:52px;font-size:15px;border-radius:12px;order:3}
+.tab{flex:1 1 28%;letter-spacing:.5px;padding:12px 6px}#panel-sg .x{display:none}
+main{order:2}.panels{order:3}footer{order:4}
 footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-spacing:.5px;padding-top:10px}
 }
 </style></head><body>
@@ -164,6 +184,7 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
  <button type="button" class="tab" role="tab" id="tab-ca" aria-controls="panel-ca" aria-selected="false">Canadian</button>
  <button type="button" class="tab" role="tab" id="tab-ps" aria-controls="panel-ps" aria-selected="false">Proof Sets</button>
  <button type="button" class="tab" role="tab" id="tab-bu" aria-controls="panel-bu" aria-selected="false">Bullion</button>
+ <button type="button" class="tab" role="tab" id="tab-sg" aria-controls="panel-sg" aria-selected="false">Scrap Gold</button>
 </nav>
 <div class="panels">
  <div class="panel active" id="panel-us" role="tabpanel" aria-labelledby="tab-us">
@@ -180,6 +201,9 @@ footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-sp
   <section class="melt bs"><h3>Silver Bullion Melt Values<span>.999 fine · weight × live silver spot</span></h3><div class="tiles"><div class="tile"><b>1 Gram</b><i>Silver · 0.03215 ozt</i><em data-asw="0.0321507">—</em></div><div class="tile"><b>1/10 ozt</b><i>Silver · 0.1 ozt</i><em data-asw="0.1">—</em></div><div class="tile"><b>1/4 ozt</b><i>Silver · 0.25 ozt</i><em data-asw="0.25">—</em></div><div class="tile"><b>1/2 ozt</b><i>Silver · 0.5 ozt</i><em data-asw="0.5">—</em></div><div class="tile"><b>1 ozt</b><i>Silver · 1 ozt</i><em data-asw="1">—</em></div><div class="tile"><b>5 ozt</b><i>Silver · 5 ozt</i><em data-asw="5">—</em></div><div class="tile"><b>10 ozt</b><i>Silver · 10 ozt</i><em data-asw="10">—</em></div><div class="tile"><b>Kilo</b><i>Silver · 32.15 ozt</i><em data-asw="32.1507">—</em></div><div class="tile"><b>100 ozt</b><i>Silver · 100 ozt</i><em data-asw="100">—</em></div></div></section>
   <section class="melt gm bg"><h3>Gold Bullion Melt Values<span>.999 fine · weight × live gold spot</span></h3><div class="tiles"><div class="tile"><b>1/2 Gram</b><i>Gold · 0.01608 ozt</i><em data-agw="0.0160754">—</em></div><div class="tile"><b>1 Gram</b><i>Gold · 0.03215 ozt</i><em data-agw="0.0321507">—</em></div><div class="tile"><b>1/10 ozt</b><i>Gold · 0.1 ozt</i><em data-agw="0.1">—</em></div><div class="tile"><b>5 Gram</b><i>Gold · 0.16075 ozt</i><em data-agw="0.160754">—</em></div><div class="tile"><b>1/4 ozt</b><i>Gold · 0.25 ozt</i><em data-agw="0.25">—</em></div><div class="tile"><b>1/2 ozt</b><i>Gold · 0.5 ozt</i><em data-agw="0.5">—</em></div><div class="tile"><b>1 ozt</b><i>Gold · 1 ozt</i><em data-agw="1">—</em></div></div></section>
  </div>
+<div class="panel" id="panel-sg" role="tabpanel" aria-labelledby="tab-sg" hidden>
+  <section class="melt gm"><h3>Scrap Gold Calculator<span>DWT × 0.05 ozt × purity × live gold spot</span></h3><div class="sgrow" data-p=".4167"><div><b>10K Gold</b><i>41.67% pure<span class="x"> · 1 DWT = 0.05 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small>per DWT</small></div><div><label for="sg10K">DWT (pennyweight)</label><input id="sg10K" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-p=".5833"><div><b>14K Gold</b><i>58.33% pure<span class="x"> · 1 DWT = 0.05 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small>per DWT</small></div><div><label for="sg14K">DWT (pennyweight)</label><input id="sg14K" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-p=".75"><div><b>18K Gold</b><i>75% pure<span class="x"> · 1 DWT = 0.05 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small>per DWT</small></div><div><label for="sg18K">DWT (pennyweight)</label><input id="sg18K" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-p=".9167"><div><b>22K Gold</b><i>91.67% pure<span class="x"> · 1 DWT = 0.05 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small>per DWT</small></div><div><label for="sg22K">DWT (pennyweight)</label><input id="sg22K" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgtot"><button type="button" class="clr" id="sgclr">Clear</button><span>Total Melt</span><em id="sgtotal">$0.00</em></div></section>
+ </div>
 </div>
 <footer><span>Spot from gold-api.com · melt values = metal content × spot (metal only) · updates every 30 s</span></footer>
 <script>
@@ -188,13 +212,16 @@ document.getElementById('d').textContent=x.toLocaleDateString('en-US',{weekday:'
 var last={};
 function fmt(v){return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function load(m,s){fetch('https://api.gold-api.com/price/'+s,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
- if(typeof d.price!=='number')throw 0;document.querySelectorAll(m==='silver'?'[data-asw]':'[data-agw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw||e.dataset.agw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/ozt</small>';
+ if(typeof d.price!=='number')throw 0;if(m==='gold'){gs=d.price;sg();}document.querySelectorAll(m==='silver'?'[data-asw]':'[data-agw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw||e.dataset.agw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/ozt</small>';
  var u=document.getElementById(m+'-u');u.className='upd';u.textContent='Updated '+new Date(d.updatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' ET';
 }).catch(function(){var u=document.getElementById(m+'-u');if(last[m]){u.className='upd stale';u.textContent='Reconnecting… showing last price from '+new Date(last[m]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}else u.textContent='Price unavailable – retrying';});}
 function prices(){load('gold','XAU');load('silver','XAG');}
 function showTab(id){document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.id==='tab-'+id?'true':'false');});
  document.querySelectorAll('.panel').forEach(function(p){var on=p.id==='panel-'+id;p.classList.toggle('active',on);if(on)p.removeAttribute('hidden');else p.setAttribute('hidden','');});}
 document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){showTab(t.id.replace('tab-',''));});});
+var gs=0;function sg(){var t=0;document.querySelectorAll('#panel-sg .sgrow').forEach(function(r){var p=parseFloat(r.dataset.p),v=parseFloat(r.querySelector('input').value),d=gs*0.05*p;r.querySelector('.ppd').textContent=gs?fmt(d):'—';var m=(v>0&&gs)?v*d:0;t+=m;r.querySelector('.mv').textContent=fmt(m);});document.getElementById('sgtotal').textContent=fmt(t);}
+document.querySelectorAll('#panel-sg input').forEach(function(i){i.addEventListener('input',sg);});
+document.getElementById('sgclr').addEventListener('click',function(){document.querySelectorAll('#panel-sg input').forEach(function(i){i.value='';});sg();});
 prices();setInterval(prices,30000);
 c();setInterval(c,1000);
 </script></body></html>
