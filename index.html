@@ -37,6 +37,7 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 .price{font-size:14vh;font-weight:800;line-height:1;letter-spacing:-.2vh;font-variant-numeric:tabular-nums;margin:.6vh 0 1vh}
 .gold .price{color:#fcd05a;text-shadow:0 0 4vh rgba(252,208,90,.25)}.silver .price{color:#f4f7fa;text-shadow:0 0 4vh rgba(255,255,255,.18)}
 .price small{font-size:.32em;font-weight:500;color:#8fb3c7;margin-left:.6vw;letter-spacing:0}
+.chg{font-size:2.6vh;font-weight:700;font-variant-numeric:tabular-nums;margin:-.2vh 0 .6vh;white-space:nowrap;color:#8fb3c7}.chg.up{color:#3ddc84}.chg.dn{color:#ff5a5f}.chg small{font-size:.62em;font-weight:500;color:#6d8ea3;letter-spacing:.15vh;margin-left:.6vw;text-transform:uppercase}
 .upd{font-size:1.7vh;color:#8fb3c7;letter-spacing:.2vh;margin-bottom:.7vh}.upd.stale{color:#ff9f6b}
 .tabs{display:flex;gap:1vw;margin:.4vh 0 1.2vh;flex-shrink:0}
 .tab{flex:1;min-height:5.6vh;padding:1.2vh 1.2vw;border-radius:1.4vh;border:2px solid rgba(46,192,220,.35);background:rgba(4,16,27,.45);color:#8fb3c7;font-size:2.2vh;font-weight:700;letter-spacing:.35vh;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;font-family:inherit}
@@ -87,6 +88,7 @@ main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh
 .label{margin-bottom:.15vh}.sym{width:3.8vh;height:3.8vh;font-size:1.7vh}
 .label h2{font-size:3.2vh;letter-spacing:.6vh}.label span{font-size:1.2vh}
 .upd{font-size:1.3vh;margin-bottom:.2vh}
+.chg{font-size:3vh;margin:0 0 .3vh}
 .tabs{margin:.5vh 0 .6vh;gap:.7vw;flex:0 0 auto}
 .tab{min-height:3.8vh;font-size:1.7vh;padding:.65vh .9vw;letter-spacing:.25vh}
 .melt{padding:.55vh 1.2vw .65vh;margin-bottom:.55vh}
@@ -139,6 +141,7 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 .label h2{font-size:30px;letter-spacing:5px}.label span{font-size:11px;letter-spacing:1px}
 .price{font-size:60px;margin:6px 0 6px}
 .upd{font-size:12px;margin-bottom:10px}
+.chg{font-size:17px;margin:0 0 6px}.chg small{font-size:10px;margin-left:6px}
 .tabs{gap:8px;margin:4px 0 14px;flex-wrap:wrap}
 .tab{min-height:48px;font-size:13px;letter-spacing:1px;border-radius:12px;padding:12px 10px;flex:1 1 28%}
 .melt{padding:14px 12px;border-radius:16px;margin-bottom:14px}
@@ -188,9 +191,9 @@ body.nospot #panel-sg .sgtot em{font-size:6vh}body.nospot #panel-sg .sgtot span{
 </header>
 <main>
  <section class="card gold"><div class="label"><div class="sym">Au</div><div><h2>GOLD</h2><span>SPOT · USD / OZT · 24 HR</span></div></div>
-  <div class="price" id="gold">—</div><div class="upd" id="gold-u">Loading…</div></section>
+  <div class="price" id="gold">—</div><div class="chg" id="gold-c"></div><div class="upd" id="gold-u">Loading…</div></section>
  <section class="card silver"><div class="label"><div class="sym">Ag</div><div><h2>SILVER</h2><span>SPOT · USD / OZT · 24 HR</span></div></div>
-  <div class="price" id="silver">—</div><div class="upd" id="silver-u">Loading…</div></section>
+  <div class="price" id="silver">—</div><div class="chg" id="silver-c"></div><div class="upd" id="silver-u">Loading…</div></section>
 </main>
 <nav class="tabs" role="tablist" aria-label="Melt value category">
  <button type="button" class="tab" role="tab" id="tab-us" aria-controls="panel-us" aria-selected="true">US</button>
@@ -226,10 +229,14 @@ document.getElementById('d').textContent=x.toLocaleDateString('en-US',{weekday:'
 var last={};
 function fmt(v){return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function load(m,s){fetch('https://api.gold-api.com/price/'+s,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
- if(typeof d.price!=='number')throw 0;if(m==='gold'){gs=d.price;sg();}document.querySelectorAll(m==='silver'?'[data-asw]':'[data-agw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw||e.dataset.agw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/ozt</small>';
+ if(typeof d.price!=='number')throw 0;if(m==='gold'){gs=d.price;sg();}document.querySelectorAll(m==='silver'?'[data-asw]':'[data-agw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw||e.dataset.agw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/ozt</small>';cur[m]=d.price;chg(m);
  var u=document.getElementById(m+'-u');u.className='upd';u.textContent='Updated '+new Date(d.updatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' ET';
 }).catch(function(){var u=document.getElementById(m+'-u');if(last[m]){u.className='upd stale';u.textContent='Reconnecting… showing last price from '+new Date(last[m]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}else u.textContent='Price unavailable – retrying';});}
-function prices(){load('gold','XAU');load('silver','XAG');}
+var cur={},base={},baseDay='';
+function etDay(off){var x=new Date(Date.now()+off*864e5);return x.toLocaleDateString('en-CA',{timeZone:'America/New_York'});}
+function getBase(){var y=etDay(-1);if(baseDay===y)return;baseDay=y;[['gold','XAU'],['silver','XAG']].forEach(function(a){fetch('https://api.coinbase.com/v2/prices/'+a[1]+'-USD/spot?date='+y,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){var v=parseFloat(j.data.amount);if(v>0){base[a[0]]=v;chg(a[0]);}}).catch(function(){baseDay='';});});}
+function chg(m){var e=document.getElementById(m+'-c');if(!e||!cur[m]||!base[m])return;var d=cur[m]-base[m],pc=d/base[m]*100,up=d>=0;e.className='chg '+(up?'up':'dn');e.innerHTML=(up?'▲ ':'▼ ')+fmt(Math.abs(d))+' ('+(up?'+':'−')+Math.abs(pc).toFixed(2)+'%)<small>today</small>';}
+function prices(){getBase();load('gold','XAU');load('silver','XAG');}
 function showTab(id){document.body.classList.toggle('nospot',id==='ps'||id==='sg');document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.id==='tab-'+id?'true':'false');});
  document.querySelectorAll('.panel').forEach(function(p){var on=p.id==='panel-'+id;p.classList.toggle('active',on);if(on)p.removeAttribute('hidden');else p.setAttribute('hidden','');});}
 document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){showTab(t.id.replace('tab-',''));});});
