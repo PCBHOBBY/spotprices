@@ -88,7 +88,7 @@ body.nospot #panel-sg .ut button{font-size:1.6vh}
 #panel-sg h3 .gu{float:right;margin:0;align-items:center}#panel-sg h3 .gu em{font-style:normal;font-size:1.3vh;color:#8fb3c7;letter-spacing:.15vh;margin-right:.5vw;text-transform:uppercase}#panel-sg .gu button{border-color:#fcd05a;color:#fcd05a;font-size:1.5vh;padding:.3vh .9vw}#panel-sg .gu button.on{background:#fcd05a;color:#06131f}
 @media(max-width:700px){#panel-sg h3 .gu{float:none;display:flex;margin:8px 0 0}#panel-sg h3 .gu em{font-size:11px;margin-right:8px}#panel-sg .gu button{font-size:13px;padding:4px 14px}}
 #panel-sg .clr{min-height:5.4vh;padding:.8vh 2vw;border-radius:1.2vh;border:2px solid rgba(252,208,90,.5);background:rgba(4,16,27,.6);color:#fcd05a;font-family:inherit;font-weight:700;font-size:1.9vh;letter-spacing:.3vh;text-transform:uppercase;cursor:pointer}
-@media (min-width:1100px) and (orientation:landscape){
+@media (min-width:901px) and (orientation:landscape){
 main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh;gap:1.8vw;align-content:center}
 .card{padding:.6vh 1.4vw;overflow:hidden}
 .price{font-size:9vh;margin:.2vh 0 .3vh}
@@ -189,6 +189,14 @@ body.nospot #panel-sg .melt{padding:2.4vh 2vw}body.nospot #panel-sg .melt h3{fon
 body.nospot #panel-sg .sgrow{padding:1.3vh 1.6vw;margin-bottom:1.2vh}body.nospot #panel-sg .sgrow b{font-size:3.4vh}body.nospot #panel-sg .sgrow i{font-size:1.8vh}body.nospot #panel-sg .pd{font-size:3.2vh}body.nospot #panel-sg .pd small{font-size:1.6vh}
 body.nospot #panel-sg label{font-size:1.7vh}body.nospot #panel-sg input{min-height:6.4vh;font-size:3.8vh}body.nospot #panel-sg .mv{font-size:4.8vh}
 body.nospot #panel-sg .sgtot em{font-size:6vh}body.nospot #panel-sg .sgtot span{font-size:3vh}body.nospot #panel-sg .clr{min-height:6vh;font-size:2.2vh;padding:1vh 3vw}
+}
+@media (orientation:landscape) and (min-width:901px) and (max-width:1399px){
+html,body{height:auto;overflow-x:hidden;overflow-y:auto!important;-webkit-overflow-scrolling:touch}
+body{min-height:100vh}
+main{flex:none;height:auto;max-height:none;overflow:visible;min-height:30vh}
+.price{font-size:min(14vh,7.4vw)}
+.tab{touch-action:manipulation}
+#panel-sg input{font-size:max(16px,2.8vh)}
 }
 </style></head><body>
 <header>
