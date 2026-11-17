@@ -70,24 +70,11 @@ main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:2.6vw;pa
 #panel-ps .tile b{font-size:2.1vh}#panel-ps .tile i{font-size:1.4vh}#panel-ps .tile em{font-size:4.6vh}
 #panel-bu .bs{background:linear-gradient(180deg,rgba(220,228,236,.08),rgba(120,135,150,.06));border-color:rgba(201,209,217,.45)}#panel-bu .bs h3{color:#e3e9ef}#panel-bu .bs .tile{border-top-color:#c9d1d9}
 #panel-bu .bs .tiles{grid-template-columns:repeat(5,1fr);gap:1vw}#panel-bu .bg .tiles{grid-template-columns:repeat(7,1fr);gap:.8vw}
-footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh;flex-shrink:0}
-/* tv-fit — large landscape / OptiSigns only; keep off phones */
-#panel-sg .sgrow{display:grid;grid-template-columns:1.1fr 1fr 1.3fr 1.2fr;align-items:center;gap:1.2vw;background:rgba(4,16,27,.55);border-radius:1.4vh;padding:1vh 1.2vw;margin-bottom:.9vh;border-top:3px solid #d4af37}
-#panel-sg .sgrow b{display:block;font-size:2.6vh;color:#f4f7fa;font-weight:700}#panel-sg .sgrow i{display:block;font-style:normal;font-size:1.4vh;color:#6d8ea3}
-#panel-sg .pd{font-size:2.2vh;color:#e9d9a6;font-variant-numeric:tabular-nums}#panel-sg .pd small{display:block;font-size:1.3vh;color:#6d8ea3}
-#panel-sg label{display:block;font-size:1.3vh;color:#8fb3c7;letter-spacing:.15vh;margin-bottom:.3vh}
-#panel-sg input{width:100%;min-height:5.4vh;font-size:2.8vh;font-family:inherit;font-weight:700;padding:.6vh 1vw;border-radius:1.1vh;border:2px solid rgba(252,208,90,.5);background:rgba(2,10,18,.8);color:#f4f7fa;text-align:right;font-variant-numeric:tabular-nums}
-#panel-sg input:focus{outline:none;border-color:#fcd05a;box-shadow:0 0 1.5vh rgba(252,208,90,.35)}
-#panel-sg .mv{text-align:right;font-size:3.6vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums}
-#panel-sg .sgtot{display:flex;align-items:center;justify-content:space-between;gap:1.5vw;padding:1vh 1.2vw 0}
-#panel-sg .sgtot span{font-size:2.2vh;letter-spacing:.4vh;color:#fcd05a;font-weight:700;text-transform:uppercase}#panel-sg .sgtot em{font-style:normal;font-size:5vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;margin-left:auto}
-#panel-sg .sgrow.sv{border-top-color:#c9d1d9}#panel-sg .sv .pd{color:#dfe5ea}#panel-sg .sv .mv{color:#e6ebef}#panel-sg .sv input{border-color:rgba(201,209,217,.55)}#panel-sg .sv input:focus{border-color:#c9d1d9;box-shadow:0 0 1.5vh rgba(201,209,217,.3)}
-#panel-sg .ut{display:inline-flex;margin-left:.6vw;vertical-align:middle}#panel-sg .ut button{font-family:inherit;font-size:1.3vh;font-weight:700;padding:.2vh .7vw;border:1px solid #c9d1d9;background:transparent;color:#c9d1d9;cursor:pointer}#panel-sg .ut button:first-child{border-radius:.8vh 0 0 .8vh}#panel-sg .ut button:last-child{border-radius:0 .8vh .8vh 0;border-left:0}#panel-sg .ut button.on{background:#c9d1d9;color:#06131f}
-body.nospot #panel-sg .ut button{font-size:1.6vh}
-@media(max-width:700px){#panel-sg .ut button{font-size:12px;padding:3px 10px}#panel-sg .ut{margin-left:6px}}
-#panel-sg h3 .gu{float:right;margin:0;align-items:center}#panel-sg h3 .gu em{font-style:normal;font-size:1.3vh;color:#8fb3c7;letter-spacing:.15vh;margin-right:.5vw;text-transform:uppercase}#panel-sg .gu button{border-color:#fcd05a;color:#fcd05a;font-size:1.5vh;padding:.3vh .9vw}#panel-sg .gu button.on{background:#fcd05a;color:#06131f}
-@media(max-width:700px){#panel-sg h3 .gu{float:none;display:flex;margin:8px 0 0}#panel-sg h3 .gu em{font-size:11px;margin-right:8px}#panel-sg .gu button{font-size:13px;padding:4px 14px}}
-#panel-sg .clr{min-height:5.4vh;padding:.8vh 2vw;border-radius:1.2vh;border:2px solid rgba(252,208,90,.5);background:rgba(4,16,27,.6);color:#fcd05a;font-family:inherit;font-weight:700;font-size:1.9vh;letter-spacing:.3vh;text-transform:uppercase;cursor:pointer}
+footer{display:flex;white-space:nowrap;gap:2vw;justify-content:space-between;font-size:1.9vh;color:#6d8ea3;letter-spacing:.2vh;border-top:1px solid rgba(46,192,220,.18);padding-top:1.4vh;flex-shrink:0}/* tv-fit — large landscape / OptiSigns only; keep off phones */
+#panel-sg .sgrow,/* tv-fit — large landscape / OptiSigns only; keep off phones */
+#panel-sg .sgrow,#panel-fv .sgrow{display:grid;grid-template-columns:1.1fr 1fr 1.3fr 1.2fr;align-items:center;gap:1.2vw;background:rgba(4,16,27,.55);border-radius:1.4vh;padding:1vh 1.2vw;margin-bottom:.9vh;border-top:3px solid #d4af37}#panel-sg .sgrow b,#panel-fv .sgrow b{display:block;font-size:2.6vh;color:#f4f7fa;font-weight:700}#panel-sg .sgrow i,#panel-fv .sgrow i{display:block;font-style:normal;font-size:1.4vh;color:#6d8ea3}#panel-sg .pd,#panel-fv .pd{font-size:2.2vh;color:#e9d9a6;font-variant-numeric:tabular-nums}#panel-sg .pd small,#panel-fv .pd small{display:block;font-size:1.3vh;color:#6d8ea3}#panel-sg label,#panel-fv label{display:block;font-size:1.3vh;color:#8fb3c7;letter-spacing:.15vh;margin-bottom:.3vh}#panel-sg input,#panel-fv input{width:100%;min-height:5.4vh;font-size:2.8vh;font-family:inherit;font-weight:700;padding:.6vh 1vw;border-radius:1.1vh;border:2px solid rgba(252,208,90,.5);background:rgba(2,10,18,.8);color:#f4f7fa;text-align:right;font-variant-numeric:tabular-nums}#panel-sg input:focus,#panel-fv input:focus{outline:none;border-color:#fcd05a;box-shadow:0 0 1.5vh rgba(252,208,90,.35)}#panel-sg .mv,#panel-fv .mv{text-align:right;font-size:3.6vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums}#panel-sg .sgtot,#panel-fv .sgtot{display:flex;align-items:center;justify-content:space-between;gap:1.5vw;padding:1vh 1.2vw 0}#panel-sg .sgtot span,#panel-fv .sgtot span{font-size:2.2vh;letter-spacing:.4vh;color:#fcd05a;font-weight:700;text-transform:uppercase}#panel-sg .sgtot em,#panel-fv .sgtot em{font-style:normal;font-size:5vh;font-weight:800;color:#fcd05a;font-variant-numeric:tabular-nums;margin-left:auto}#panel-sg .sgrow.sv,#panel-fv .sgrow.sv{border-top-color:#c9d1d9}#panel-sg .sv .pd,#panel-fv .sv .pd{color:#dfe5ea}#panel-sg .sv .mv,#panel-fv .sv .mv{color:#e6ebef}#panel-sg .sv input,#panel-fv .sv input{border-color:rgba(201,209,217,.55)}#panel-sg .sv input:focus,#panel-fv .sv input:focus{border-color:#c9d1d9;box-shadow:0 0 1.5vh rgba(201,209,217,.3)}#panel-sg .ut,#panel-fv .ut{display:inline-flex;margin-left:.6vw;vertical-align:middle}#panel-sg .ut button,#panel-fv .ut button{font-family:inherit;font-size:1.3vh;font-weight:700;padding:.2vh .7vw;border:1px solid #c9d1d9;background:transparent;color:#c9d1d9;cursor:pointer}#panel-sg .ut button:first-child,#panel-fv .ut button:first-child{border-radius:.8vh 0 0 .8vh}#panel-sg .ut button:last-child,#panel-fv .ut button:last-child{border-radius:0 .8vh .8vh 0;border-left:0}#panel-sg .ut button.on,#panel-fv .ut button.on{background:#c9d1d9;color:#06131f}body.nospot #panel-sg .ut button,body.nospot #panel-fv .ut button{font-size:1.6vh}
+@media(max-width:700px){#panel-sg .ut button,#panel-fv .ut button{font-size:12px;padding:3px 10px}#panel-sg .ut,#panel-fv .ut{margin-left:6px}}#panel-sg h3 .gu,#panel-fv h3 .gu{float:right;margin:0;align-items:center}#panel-sg h3 .gu em,#panel-fv h3 .gu em{font-style:normal;font-size:1.3vh;color:#8fb3c7;letter-spacing:.15vh;margin-right:.5vw;text-transform:uppercase}#panel-sg .gu button,#panel-fv .gu button{border-color:#fcd05a;color:#fcd05a;font-size:1.5vh;padding:.3vh .9vw}#panel-sg .gu button.on,#panel-fv .gu button.on{background:#fcd05a;color:#06131f}
+@media(max-width:700px){#panel-sg h3 .gu,#panel-fv h3 .gu{float:none;display:flex;margin:8px 0 0}#panel-sg h3 .gu em,#panel-fv h3 .gu em{font-size:11px;margin-right:8px}#panel-sg .gu button,#panel-fv .gu button{font-size:13px;padding:4px 14px}}#panel-sg .clr,#panel-fv .clr{min-height:5.4vh;padding:.8vh 2vw;border-radius:1.2vh;border:2px solid rgba(252,208,90,.5);background:rgba(4,16,27,.6);color:#fcd05a;font-family:inherit;font-weight:700;font-size:1.9vh;letter-spacing:.3vh;text-transform:uppercase;cursor:pointer}
 @media (min-width:901px) and (orientation:landscape){
 main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh;gap:1.8vw;align-content:center}
 .card{padding:.6vh 1.4vw;overflow:hidden}
@@ -122,8 +109,7 @@ main{flex:1 1 0;min-height:0;max-height:38vh;overflow:hidden;padding:.6vh 0 .5vh
 #panel-ps .tile b{font-size:1.7vh}#panel-ps .tile i{font-size:1.15vh;margin:.2vh 0 .35vh}#panel-ps .tile em{font-size:3.6vh}
 #panel-bu .bs .tiles{gap:.65vw}#panel-bu .bg .tiles{gap:.55vw}
 #panel-bu .tile{padding:.45vh .5vw}#panel-bu .tile b{font-size:1.65vh}#panel-bu .tile i{font-size:1.05vh}#panel-bu .tile em{font-size:3vh}
-#panel-bu .bg .tile em{font-size:2.7vh}
-#panel-sg .sgrow{padding:.7vh 1vw;margin-bottom:.6vh}#panel-sg .sgrow b{font-size:2.2vh}#panel-sg input{min-height:4.6vh;font-size:2.4vh}#panel-sg .mv{font-size:3.2vh}#panel-sg .sgtot em{font-size:4.2vh}#panel-sg .clr{min-height:4.4vh}
+#panel-bu .bg .tile em{font-size:2.7vh}#panel-sg .sgrow,#panel-fv .sgrow{padding:.7vh 1vw;margin-bottom:.6vh}#panel-sg .sgrow b,#panel-fv .sgrow b{font-size:2.2vh}#panel-sg input,#panel-fv input{min-height:4.6vh;font-size:2.4vh}#panel-sg .mv,#panel-fv .mv{font-size:3.2vh}#panel-sg .sgtot em,#panel-fv .sgtot em{font-size:4.2vh}#panel-sg .clr,#panel-fv .clr{min-height:4.4vh}
 
 header{padding-bottom:1vh;flex:0 0 auto}
 .logo{height:8.5vh}.brand h1{font-size:4vh}.brand small{font-size:1.55vh;margin-bottom:.25vh}
@@ -169,14 +155,8 @@ main{grid-template-columns:1fr;gap:16px;padding:16px 0}
 #panel-bu .bs .tiles,#panel-bu .bg .tiles{grid-template-columns:1fr 1fr;gap:8px}
 #panel-bu .tiles .tile:last-child{grid-column:1/-1}
 .tab{flex:1 1 40%}
-header{order:0}nav.tabs{order:1;margin:0 0 4px}
-#panel-sg .sgrow{grid-template-columns:1fr 1fr;gap:8px 10px;padding:12px;border-radius:12px;margin-bottom:10px}
-#panel-sg .sgrow b{font-size:20px}#panel-sg .sgrow i{font-size:12px}#panel-sg .pd{font-size:15px;text-align:right}#panel-sg .pd small{font-size:11px}
-#panel-sg label{font-size:12px;margin-bottom:4px}#panel-sg input{min-height:52px;font-size:22px;padding:8px 12px;border-radius:10px}
-#panel-sg .mv{font-size:24px;align-self:end;padding-bottom:10px}
-#panel-sg .sgtot{flex-wrap:wrap;padding:8px 4px 0;gap:10px}#panel-sg .sgtot span{font-size:15px;letter-spacing:2px}#panel-sg .sgtot em{font-size:32px}
-#panel-sg .clr{width:100%;min-height:52px;font-size:15px;border-radius:12px;order:3}
-.tab{flex:1 1 28%;letter-spacing:.5px;padding:12px 4px;font-size:12px;white-space:nowrap}#panel-sg .x{display:none}
+header{order:0}nav.tabs{order:1;margin:0 0 4px}#panel-sg .sgrow,#panel-fv .sgrow{grid-template-columns:1fr 1fr;gap:8px 10px;padding:12px;border-radius:12px;margin-bottom:10px}#panel-sg .sgrow b,#panel-fv .sgrow b{font-size:20px}#panel-sg .sgrow i,#panel-fv .sgrow i{font-size:12px}#panel-sg .pd,#panel-fv .pd{font-size:15px;text-align:right}#panel-sg .pd small,#panel-fv .pd small{font-size:11px}#panel-sg label,#panel-fv label{font-size:12px;margin-bottom:4px}#panel-sg input,#panel-fv input{min-height:52px;font-size:22px;padding:8px 12px;border-radius:10px}#panel-sg .mv,#panel-fv .mv{font-size:24px;align-self:end;padding-bottom:10px}#panel-sg .sgtot,#panel-fv .sgtot{flex-wrap:wrap;padding:8px 4px 0;gap:10px}#panel-sg .sgtot span,#panel-fv .sgtot span{font-size:15px;letter-spacing:2px}#panel-sg .sgtot em,#panel-fv .sgtot em{font-size:32px}#panel-sg .clr,#panel-fv .clr{width:100%;min-height:52px;font-size:15px;border-radius:12px;order:3}
+.tab{flex:1 1 28%;letter-spacing:.5px;padding:12px 4px;font-size:12px;white-space:nowrap}#panel-sg .x,#panel-fv .x{display:none}
 main{order:2}.panels{order:3}footer{order:4}
 footer{flex-direction:column;white-space:normal;gap:6px;font-size:11px;letter-spacing:.5px;padding-top:10px}
 }
@@ -184,19 +164,35 @@ body.nospot main{display:none!important}
 @media (orientation:landscape) and (min-width:901px){
 body.nospot .tabs{margin-top:1.6vh}
 body.nospot #panel-ps .melt{padding:3vh 2.4vw 3.4vh}body.nospot #panel-ps .melt h3{font-size:3vh;margin-bottom:2.4vh}
-body.nospot #panel-ps .tiles{gap:2vh 1.4vw}body.nospot #panel-ps .tile{padding:4.5vh 1vw}body.nospot #panel-ps .tile b{font-size:3.4vh}body.nospot #panel-ps .tile i{font-size:1.9vh;margin:.8vh 0 1.4vh}body.nospot #panel-ps .tile em{font-size:9vh}
-body.nospot #panel-sg .melt{padding:2.4vh 2vw}body.nospot #panel-sg .melt h3{font-size:2.6vh;margin-bottom:1.4vh}
-body.nospot #panel-sg .sgrow{padding:1.3vh 1.6vw;margin-bottom:1.2vh}body.nospot #panel-sg .sgrow b{font-size:3.4vh}body.nospot #panel-sg .sgrow i{font-size:1.8vh}body.nospot #panel-sg .pd{font-size:3.2vh}body.nospot #panel-sg .pd small{font-size:1.6vh}
-body.nospot #panel-sg label{font-size:1.7vh}body.nospot #panel-sg input{min-height:6.4vh;font-size:3.8vh}body.nospot #panel-sg .mv{font-size:4.8vh}
-body.nospot #panel-sg .sgtot em{font-size:6vh}body.nospot #panel-sg .sgtot span{font-size:3vh}body.nospot #panel-sg .clr{min-height:6vh;font-size:2.2vh;padding:1vh 3vw}
+body.nospot #panel-ps .tiles{gap:2vh 1.4vw}body.nospot #panel-ps .tile{padding:4.5vh 1vw}body.nospot #panel-ps .tile b{font-size:3.4vh}body.nospot #panel-ps .tile i{font-size:1.9vh;margin:.8vh 0 1.4vh}body.nospot #panel-ps .tile em{font-size:9vh}body.nospot #panel-sg .melt,body.nospot #panel-fv .melt{padding:2.4vh 2vw}body.nospot #panel-sg .melt h3,body.nospot #panel-fv .melt h3{font-size:2.6vh;margin-bottom:1.4vh}body.nospot #panel-sg .sgrow,body.nospot #panel-fv .sgrow{padding:1.3vh 1.6vw;margin-bottom:1.2vh}body.nospot #panel-sg .sgrow b,body.nospot #panel-fv .sgrow b{font-size:3.4vh}body.nospot #panel-sg .sgrow i,body.nospot #panel-fv .sgrow i{font-size:1.8vh}body.nospot #panel-sg .pd,body.nospot #panel-fv .pd{font-size:3.2vh}body.nospot #panel-sg .pd small,body.nospot #panel-fv .pd small{font-size:1.6vh}body.nospot #panel-sg label,body.nospot #panel-fv label{font-size:1.7vh}body.nospot #panel-sg input,body.nospot #panel-fv input{min-height:6.4vh;font-size:3.8vh}body.nospot #panel-sg .mv,body.nospot #panel-fv .mv{font-size:4.8vh}body.nospot #panel-sg .sgtot em,body.nospot #panel-fv .sgtot em{font-size:6vh}body.nospot #panel-sg .sgtot span,body.nospot #panel-fv .sgtot span{font-size:3vh}body.nospot #panel-sg .clr,body.nospot #panel-fv .clr{min-height:6vh;font-size:2.2vh;padding:1vh 3vw}
 }
 @media (orientation:landscape) and (min-width:901px) and (max-width:1399px){
 html,body{height:auto;overflow-x:hidden;overflow-y:auto!important;-webkit-overflow-scrolling:touch}
 body{min-height:100vh}
 main{flex:none;height:auto;max-height:none;overflow:visible;min-height:30vh}
 .price{font-size:min(14vh,7.4vw)}
-.tab{touch-action:manipulation}
-#panel-sg input{font-size:max(16px,2.8vh)}
+.tab{touch-action:manipulation}#panel-sg input,#panel-fv input{font-size:max(16px,2.8vh)}
+}
+
+#panel-fv .melt{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(141,147,156,.08));border-color:rgba(201,209,217,.45)}
+#panel-fv .melt h3{color:#c9d1d9}
+#panel-fv .sgrow{border-top-color:#c9d1d9}
+@media (orientation:landscape) and (min-width:901px){#panel-fv .sgrow{grid-template-columns:1.8fr .85fr 1.2fr 1.05fr}}
+
+#panel-fv .pd{color:#dfe5ea}
+#panel-fv .mv,#panel-fv .sgtot em,#panel-fv .sgtot span{color:#e8eef3}
+#panel-fv input{border-color:rgba(201,209,217,.55)}
+#panel-fv input:focus{outline:none;border-color:#c9d1d9;box-shadow:0 0 1.5vh rgba(201,209,217,.3)}
+#panel-fv .clr{border-color:rgba(201,209,217,.55);color:#c9d1d9}
+
+@media (orientation:landscape) and (min-width:901px){
+body.nospot #panel-fv .melt{padding:1.4vh 1.8vw 1.2vh}body.nospot #panel-fv .melt h3{font-size:2.2vh;margin-bottom:.8vh}
+body.nospot #panel-fv .sgrow{padding:.7vh 1.3vw;margin-bottom:.45vh}body.nospot #panel-fv .sgrow b{font-size:2.6vh}body.nospot #panel-fv .sgrow i{font-size:1.4vh}
+body.nospot #panel-fv .pd{font-size:2.4vh}body.nospot #panel-fv .pd small{font-size:1.25vh}
+body.nospot #panel-fv label{font-size:1.3vh}body.nospot #panel-fv input{min-height:4.6vh;font-size:2.8vh}
+body.nospot #panel-fv .mv{font-size:3.6vh}body.nospot #panel-fv .sgtot{padding:.6vh 1vw 0}
+body.nospot #panel-fv .sgtot em{font-size:4.4vh}body.nospot #panel-fv .sgtot span{font-size:2.2vh}
+body.nospot #panel-fv .clr{min-height:4.6vh;font-size:1.8vh;padding:.6vh 2vw}
 }
 </style></head><body>
 <header>
@@ -216,6 +212,8 @@ main{flex:none;height:auto;max-height:none;overflow:visible;min-height:30vh}
  <button type="button" class="tab" role="tab" id="tab-ps" aria-controls="panel-ps" aria-selected="false">Proof Sets</button>
  <button type="button" class="tab" role="tab" id="tab-bu" aria-controls="panel-bu" aria-selected="false">Bullion</button>
  <button type="button" class="tab" role="tab" id="tab-sg" aria-controls="panel-sg" aria-selected="false">Scrap</button>
+ <button type="button" class="tab" role="tab" id="tab-fv" aria-controls="panel-fv" aria-selected="false">Junk Silver</button>
+
 </nav>
 <div class="panels">
  <div class="panel active" id="panel-us" role="tabpanel" aria-labelledby="tab-us">
@@ -236,6 +234,10 @@ main{flex:none;height:auto;max-height:none;overflow:visible;min-height:30vh}
 <div class="panel" id="panel-sg" role="tabpanel" aria-labelledby="tab-sg" hidden>
   <section class="melt gm"><h3>Scrap Gold &amp; Silver Calculator<span>weight × purity × live spot</span><span class="ut gu" role="group" aria-label="Gold weight unit"><em>Gold unit</em><button type="button" class="on" data-u="dwt">DWT</button><button type="button" data-u="g">g</button></span></h3><div class="sgrow" data-p=".4167"><div><b>10K Gold</b><i>41.67% pure<span class="x"> · 1 DWT = 0.05 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small>per DWT</small></div><div><label for="sg10K">DWT (pennyweight)</label><input id="sg10K" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-p=".5833"><div><b>14K Gold</b><i>58.33% pure<span class="x"> · 1 DWT = 0.05 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small>per DWT</small></div><div><label for="sg14K">DWT (pennyweight)</label><input id="sg14K" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-p=".75"><div><b>18K Gold</b><i>75% pure<span class="x"> · 1 DWT = 0.05 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small>per DWT</small></div><div><label for="sg18K">DWT (pennyweight)</label><input id="sg18K" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-p=".9167"><div><b>22K Gold</b><i>91.67% pure<span class="x"> · 1 DWT = 0.05 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small>per DWT</small></div><div><label for="sg22K">DWT (pennyweight)</label><input id="sg22K" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow sv" id="sgsv"><div><b>Sterling Silver</b><i>92.5% pure (.925)<span class="x"> · 1 g = 0.0321507 ozt</span></i></div><div class="pd"><span class="ppd">—</span><small id="svper">per gram</small></div><div><label for="sgSt">Weight<span class="ut" role="group" aria-label="Weight unit"><button type="button" class="on" data-u="g">g</button><button type="button" data-u="ozt">ozt</button></span></label><input id="sgSt" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgtot"><button type="button" class="clr" id="sgclr">Clear</button><span>Total Melt</span><em id="sgtotal">$0.00</em></div></section>
  </div>
+<div class="panel" id="panel-fv" role="tabpanel" aria-labelledby="tab-fv" hidden>
+  <section class="melt fv"><h3>Junk Silver Calculator<span>face value × silver per $1 FV × live silver spot</span></h3><div class="sgrow" data-ozt="0.7234"><div><b>Dimes</b><i>0.7234 ozt per $1 FV</i></div><div class="pd"><span class="ppd">—</span><small>per $1 FV</small></div><div><label for="fvD">Face value ($)</label><input id="fvD" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-ozt="0.7234"><div><b>Quarters</b><i>0.7234 ozt per $1 FV</i></div><div class="pd"><span class="ppd">—</span><small>per $1 FV</small></div><div><label for="fvQ">Face value ($)</label><input id="fvQ" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-ozt="0.7234"><div><b>Half Dollars</b><i>0.7234 ozt per $1 FV</i></div><div class="pd"><span class="ppd">—</span><small>per $1 FV</small></div><div><label for="fvH">Face value ($)</label><input id="fvH" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-ozt="0.77344"><div><b>Dollars</b><i>Morgan/Peace · 0.77344 ozt per $1 FV</i></div><div class="pd"><span class="ppd">—</span><small>per $1 FV</small></div><div><label for="fvS">Face value ($)</label><input id="fvS" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-ozt="0.2958"><div><b>40% Halves</b><i>1965–70 · 0.2958 ozt per $1 FV</i></div><div class="pd"><span class="ppd">—</span><small>per $1 FV</small></div><div><label for="fv40">Face value ($)</label><input id="fv40" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgrow" data-ozt="1.1252"><div><b>War Nickels</b><i>35% · 1942–45 · 1.1252 ozt per $1 FV</i></div><div class="pd"><span class="ppd">—</span><small>per $1 FV</small></div><div><label for="fvWN">Face value ($)</label><input id="fvWN" type="number" inputmode="decimal" min="0" step="any" placeholder="0" autocomplete="off"></div><div class="mv">$0.00</div></div><div class="sgtot"><button type="button" class="clr" id="fvclr">Clear</button><span>Total Melt</span><em id="fvtotal">$0.00</em></div></section>
+</div>
+
 </div>
 <footer><span>Spot from gold-api.com · melt values = metal content × spot (metal only) · updates every 30 s</span></footer>
 <script>
@@ -244,7 +246,7 @@ document.getElementById('d').textContent=x.toLocaleDateString('en-US',{weekday:'
 var last={};
 function fmt(v){return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
 function load(m,s){fetch('https://api.gold-api.com/price/'+s,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
- if(typeof d.price!=='number')throw 0;if(m==='gold'){gs=d.price;sg();}if(m==='silver'){ss=d.price;sg();}document.querySelectorAll(m==='silver'?'[data-asw]':'[data-agw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw||e.dataset.agw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/ozt</small>';cur[m]=d.price;chg(m);
+ if(typeof d.price!=='number')throw 0;if(m==='gold'){gs=d.price;sg();}if(m==='silver'){ss=d.price;sg();fv();}document.querySelectorAll(m==='silver'?'[data-asw]':'[data-agw]').forEach(function(e){e.textContent=fmt(d.price*parseFloat(e.dataset.asw||e.dataset.agw));});last[m]=Date.now();document.getElementById(m).innerHTML=fmt(d.price)+'<small>/ozt</small>';cur[m]=d.price;chg(m);
  var u=document.getElementById(m+'-u');u.className='upd';u.textContent='Updated '+new Date(d.updatedAt).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})+' ET';
 }).catch(function(){var u=document.getElementById(m+'-u');if(last[m]){u.className='upd stale';u.textContent='Reconnecting… showing last price from '+new Date(last[m]).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});}else u.textContent='Price unavailable – retrying';});}
 var cur={},base={},baseDay='';
@@ -252,7 +254,7 @@ function etDay(off){var x=new Date(Date.now()+off*864e5);return x.toLocaleDateSt
 function getBase(){var y=etDay(-1);if(baseDay===y)return;baseDay=y;[['gold','XAU'],['silver','XAG']].forEach(function(a){fetch('https://api.coinbase.com/v2/prices/'+a[1]+'-USD/spot?date='+y,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){var v=parseFloat(j.data.amount);if(v>0){base[a[0]]=v;chg(a[0]);}}).catch(function(){baseDay='';});});}
 function chg(m){var e=document.getElementById(m+'-c');if(!e||!cur[m]||!base[m])return;var d=cur[m]-base[m],pc=d/base[m]*100,up=d>=0;e.className='chg '+(up?'up':'dn');e.innerHTML=(up?'▲ ':'▼ ')+fmt(Math.abs(d))+' ('+(up?'+':'−')+Math.abs(pc).toFixed(2)+'%)<small>today</small>';}
 function prices(){getBase();load('gold','XAU');load('silver','XAG');}
-function showTab(id){document.body.classList.toggle('nospot',id==='ps'||id==='sg');document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.id==='tab-'+id?'true':'false');});
+function showTab(id){document.body.classList.toggle('nospot',id==='ps'||id==='sg'||id==='fv');document.querySelectorAll('.tab').forEach(function(t){t.setAttribute('aria-selected',t.id==='tab-'+id?'true':'false');});
  document.querySelectorAll('.panel').forEach(function(p){var on=p.id==='panel-'+id;p.classList.toggle('active',on);if(on)p.removeAttribute('hidden');else p.setAttribute('hidden','');});}
 document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){showTab(t.id.replace('tab-',''));});});
 var gs=0,ss=0,su='g',gu='dwt';function sg(){var t=0;document.querySelectorAll('#panel-sg .sgrow[data-p]').forEach(function(r){var p=parseFloat(r.dataset.p),v=parseFloat(r.querySelector('input').value),d=gs*(gu==='dwt'?0.05:0.0321507)*p;r.querySelector('.pd small').textContent=gu==='dwt'?'per DWT':'per gram';r.querySelector('label').textContent=gu==='dwt'?'DWT (pennyweight)':'Grams';r.querySelector('.ppd').textContent=gs?fmt(d):'—';var m=(v>0&&gs)?v*d:0;t+=m;r.querySelector('.mv').textContent=fmt(m);});var r=document.getElementById('sgsv'),v=parseFloat(r.querySelector('input').value),d=ss*.925*(su==='g'?0.0321507:1);r.querySelector('.ppd').textContent=ss?fmt(d):'—';document.getElementById('svper').textContent=su==='g'?'per gram':'per ozt';var m=(v>0&&ss)?v*d:0;t+=m;r.querySelector('.mv').textContent=fmt(m);document.getElementById('sgtotal').textContent=fmt(t);}
@@ -260,6 +262,10 @@ document.querySelectorAll('#panel-sg .gu button').forEach(function(b){b.addEvent
 document.querySelectorAll('#sgsv .ut button').forEach(function(b){b.addEventListener('click',function(){su=b.dataset.u;document.querySelectorAll('#sgsv .ut button').forEach(function(x){x.classList.toggle('on',x===b);});sg();});});
 document.querySelectorAll('#panel-sg input').forEach(function(i){i.addEventListener('input',sg);});
 document.getElementById('sgclr').addEventListener('click',function(){document.querySelectorAll('#panel-sg input').forEach(function(i){i.value='';});sg();});
+
+function fv(){var t=0;document.querySelectorAll('#panel-fv .sgrow[data-ozt]').forEach(function(r){var o=parseFloat(r.dataset.ozt),v=parseFloat(r.querySelector('input').value),d=ss*o;r.querySelector('.ppd').textContent=ss?fmt(d):'—';var m=(v>0&&ss)?v*d:0;t+=m;r.querySelector('.mv').textContent=fmt(m);});document.getElementById('fvtotal').textContent=fmt(t);}
+document.querySelectorAll('#panel-fv input').forEach(function(i){i.addEventListener('input',fv);});
+document.getElementById('fvclr').addEventListener('click',function(){document.querySelectorAll('#panel-fv input').forEach(function(i){i.value='';});fv();});
 prices();setInterval(prices,30000);
 c();setInterval(c,1000);
 </script></body></html>
